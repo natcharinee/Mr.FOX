@@ -45,7 +45,7 @@ export default {
     monthlyViews: 'Monthly Views',
     distribution: 'Distribution',
     platformsValue: '20+',
-    creatorsValue: '10,000+',
+    creatorsValue: '50,000+',
     monthlyViewsValue: 'Millions',
     distributionValue: 'Multi-Platform',
   },

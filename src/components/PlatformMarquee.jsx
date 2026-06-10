@@ -1,6 +1,7 @@
 import { platforms } from '../data/content'
 import { useI18n } from '../i18n/I18nContext'
-import { card, platformLogo } from '@/lib/layout'
+import PlatformMark from './PlatformMark'
+import { card } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
 export default function PlatformMarquee() {
@@ -16,7 +17,7 @@ export default function PlatformMarquee() {
               key={`${p.id}-${i}`}
               className={cn(card, 'flex min-w-[320px] shrink-0 items-center gap-4 px-7 py-5')}
             >
-              <div className={cn(platformLogo, 'size-12 text-xl')}>{p.name.charAt(0)}</div>
+              <PlatformMark platform={p} preferLetter className="size-12" letterClassName="text-xl" />
               <div>
                 <h3 className="text-base font-bold">{p.name}</h3>
                 <p className="mt-0.5 text-[13px] text-muted-foreground">{t(`platformsMarquee.${p.id}`)}</p>

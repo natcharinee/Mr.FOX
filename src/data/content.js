@@ -1,8 +1,8 @@
 export const PLATFORM_PREVIEW_COUNT = 8
 
 export const platforms = [
-  { id: 'foxy', name: 'FOXY' },
-  { id: 'cupe', name: 'CupE' },
+  { id: 'foxy', name: 'FOXY', logo: '/images/platforms/foxy.png' },
+  { id: 'cupe', name: 'CupE', logo: '/images/platforms/cupe.png' },
   { id: 'cliq', name: 'CLIQ' },
   { id: 'himbo', name: 'Himbo' },
   { id: 'lesbie', name: 'Lesbie' },

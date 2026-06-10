@@ -45,7 +45,7 @@ export default {
     monthlyViews: '月浏览量',
     distribution: '多平台分发',
     platformsValue: '20+',
-    creatorsValue: '10,000+',
+    creatorsValue: '50,000+',
     monthlyViewsValue: '数百万',
     distributionValue: '多平台',
   },

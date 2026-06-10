@@ -16,12 +16,12 @@ const languages = [
   { code: 'zh', label: '中文' },
 ]
 
-export default function LanguageSwitcher({ className = '' }) {
+export default function LanguageSwitcher({ className = '', inOverlay = false }) {
   const { locale, setLocale } = useI18n()
   const current = languages.find((lang) => lang.code === locale) ?? languages[0]
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={!inOverlay}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
@@ -36,7 +36,10 @@ export default function LanguageSwitcher({ className = '' }) {
           <ChevronDown className="size-3 text-muted-foreground" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="min-w-0 p-1.5">
+      <DropdownMenuContent
+        align="end"
+        className={cn('min-w-0 p-1.5', inOverlay && 'z-[250]')}
+      >
         {languages.map(({ code, label }) => (
           <DropdownMenuItem
             key={code}

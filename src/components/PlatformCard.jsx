@@ -1,5 +1,6 @@
 import { useI18n } from '../i18n/I18nContext'
-import { card, platformLogo, goldLink } from '@/lib/layout'
+import PlatformMark from './PlatformMark'
+import { card, goldLink } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
 const gradientHeader =
@@ -16,7 +17,7 @@ export default function PlatformCard({ platform, index, enhanced = false, featur
           'p-7 transition-transform hover:-translate-y-0.5 hover:border-primary/30 hover:bg-[#1a1a1a]',
         )}
       >
-        <div className={cn(platformLogo, 'mb-4 size-11 text-lg')}>{platform.name.charAt(0)}</div>
+        <PlatformMark platform={platform} preferLetter className="mb-4 size-11" letterClassName="text-lg" />
         <h3 className="mb-2 text-lg font-bold">{platform.name}</h3>
         <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
           {t(`platforms.${platform.id}`)}
@@ -36,19 +37,27 @@ export default function PlatformCard({ platform, index, enhanced = false, featur
     >
       <div
         className={cn(
-          'relative flex shrink-0 items-end justify-between overflow-hidden p-5',
-          gradientHeader,
-          featured ? 'min-h-36 min-[769px]:min-h-0 min-[769px]:w-52' : 'h-28',
+          'relative shrink-0 overflow-hidden',
+          featured && platform.logo
+            ? 'min-h-44 w-full bg-[#111111] min-[769px]:min-h-0 min-[769px]:w-72 min-[769px]:self-stretch'
+            : cn(
+                'flex items-end p-5',
+                gradientHeader,
+                featured ? 'min-h-36 min-[769px]:min-h-0 min-[769px]:w-52' : 'h-28',
+              ),
         )}
       >
         {index != null && (
-          <span className="absolute right-4 top-3 text-5xl font-black leading-none text-white/[0.06] transition-colors group-hover:text-primary/10">
+          <span className="absolute right-4 top-3 z-10 text-5xl font-black leading-none text-white/[0.06] transition-colors group-hover:text-primary/10">
             {String(index).padStart(2, '0')}
           </span>
         )}
-        <div className={cn(platformLogo, featured ? 'size-14 text-2xl' : 'size-12 text-xl')}>
-          {platform.name.charAt(0)}
-        </div>
+        <PlatformMark
+          platform={platform}
+          fill={featured && Boolean(platform.logo)}
+          className={featured && platform.logo ? undefined : featured ? 'size-14' : 'size-12'}
+          letterClassName={featured ? 'text-2xl' : 'text-xl'}
+        />
       </div>
 
       <div className={cn('flex flex-1 flex-col p-6', featured && 'min-[769px]:justify-center')}>

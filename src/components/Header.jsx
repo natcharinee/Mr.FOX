@@ -53,12 +53,21 @@ export default function Header({ overHero = false }) {
           scrolled && 'border-b border-border bg-black/95 py-3.5 backdrop-blur-xl',
         )}
       >
-        <div className={cn(container, 'flex items-center gap-8')}>
-          <a href="/" className="-ml-2.5 flex shrink-0 items-center gap-2">
+        <div
+          className={cn(
+            container,
+            'flex items-center',
+            'min-[901px]:grid min-[901px]:grid-cols-[1fr_auto_1fr] min-[901px]:items-center',
+          )}
+        >
+          <a href="/" className="flex shrink-0 items-center gap-2 justify-self-start">
             <Logo />
           </a>
 
-          <nav className="hidden flex-1 items-center justify-center gap-9 min-[901px]:flex" aria-label="Main navigation">
+          <nav
+            className="hidden items-center justify-center gap-9 min-[901px]:flex"
+            aria-label="Main navigation"
+          >
             {desktopLinkKeys.map((link) => (
               <a
                 key={link.href}
@@ -70,7 +79,7 @@ export default function Header({ overHero = false }) {
             ))}
           </nav>
 
-          <div className="flex shrink-0 items-center gap-2.5 max-[900px]:ml-auto">
+          <div className="ml-auto flex shrink-0 items-center gap-2.5 min-[901px]:ml-0 min-[901px]:justify-self-end">
             <CtaLink href="#contact" size="sm" className="hidden min-[901px]:inline-flex">
               {t('common.signUp')}
             </CtaLink>
@@ -93,8 +102,8 @@ export default function Header({ overHero = false }) {
 
       <div
         className={cn(
-          'fixed inset-0 z-[200] flex flex-col bg-background opacity-0 invisible transition-all duration-300',
-          menuOpen && 'visible opacity-100',
+          'fixed inset-0 z-[200] flex flex-col bg-background opacity-0 invisible pointer-events-none transition-all duration-300',
+          menuOpen && 'visible opacity-100 pointer-events-auto',
         )}
       >
         <div className={cn(container, 'flex items-center justify-between py-5')}>
@@ -111,7 +120,7 @@ export default function Header({ overHero = false }) {
             >
               {t('nav.close')}
             </Button>
-            <LanguageSwitcher />
+            <LanguageSwitcher inOverlay />
           </div>
         </div>
         <nav className="flex flex-1 flex-col justify-center gap-2 px-6">
