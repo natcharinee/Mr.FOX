@@ -3,6 +3,7 @@ import { useFoxyCreators } from '../hooks/useFoxyCreators'
 import { useI18n } from '../i18n/I18nContext'
 import { CtaLink } from './CtaButton'
 import PanoramaCarousel from './PanoramaCarousel'
+import Testimonials from './Testimonials'
 import { container, section, sectionTitle } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
@@ -106,6 +107,8 @@ export default function SuccessStories() {
           )}
         />
       </div>
+
+      <Testimonials />
 
       <div className="relative mt-10 overflow-hidden py-[clamp(40px,6vw,64px)]">
         <div
