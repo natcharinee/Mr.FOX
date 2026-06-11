@@ -1,3 +1,14 @@
+/** สัดส่วนรูปแรก (slide-0) — ใช้ล็อกขนาดสไลด์ทุกรูปให้เท่ากัน */
+export const HERO_ASPECT_RATIO = '1007 / 1024'
+
+/** เพิ่มรูปสไลด์ Hero ที่นี่ — วางไฟล์ใน public/images/hero/ แล้วเพิ่ม object ใหม่ */
+export const heroSlides = [
+  { id: 'featured', src: '/images/hero/slide-0.png', altKey: 'featured' },
+  { id: 'cats', src: '/images/hero/slide-3.png', altKey: 'cats' },
+  { id: 'portrait', src: '/images/hero/slide-4.png', altKey: 'portrait' },
+  { id: 'party', src: '/images/hero/slide-5.png', altKey: 'party' },
+]
+
 export const PLATFORM_PREVIEW_COUNT = 8
 
 export const platforms = [
@@ -18,6 +29,8 @@ export const platforms = [
 export const creatorBenefitIds = ['monetization', 'branding', 'strategy', 'marketing', 'protection', 'analytics']
 
 export const solutionIds = ['management', 'marketing', 'production', 'technology', 'payment']
+
+export const featureCardIds = ['api', 'payments', 'analytics', 'subscriptions']
 
 export const successStories = [
   { name: 'Creator A', followers: '250K+', growth: '+340%', platform: 'FOXY' },

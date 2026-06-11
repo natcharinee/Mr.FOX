@@ -27,13 +27,13 @@ export default function LanguageSwitcher({ className = '', inOverlay = false }) 
           variant="outline"
           size="sm"
           className={cn(
-            'h-10 gap-1.5 rounded-full border-border bg-white/[0.08] px-3 text-foreground hover:border-white/20 hover:bg-white/[0.12] data-[state=open]:border-primary/40 data-[state=open]:bg-white/[0.12]',
+            'h-9 gap-1 rounded-full border-white/15 bg-white/[0.05] px-2.5 text-foreground hover:border-white/25 hover:bg-white/10 data-[state=open]:border-primary/40 data-[state=open]:bg-white/10',
             className,
           )}
           aria-label={`Language: ${current.label}`}
         >
           <FlagIcon code={current.code} className="size-[22px] h-[15px] overflow-hidden rounded-sm shadow-[0_0_0_1px_rgba(0,0,0,0.15)] [&_svg]:block [&_svg]:size-full" />
-          <ChevronDown className="size-3 text-muted-foreground" />
+          <ChevronDown className="size-2.5 text-muted-foreground/80" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent

@@ -36,7 +36,19 @@ export default {
   },
   hero: {
     imageAlt: 'Mr.FOX Halloween Party — Bloody Cats',
+    carouselLabel: 'Mr.FOX 精选图片',
+    goToSlide: '转到第 {{number}} 张',
+    prevSlide: '上一张',
+    nextSlide: '下一张',
     title: '助力创作者构建可持续的数字业务',
+    slides: {
+      featured: 'Mr.FOX 万圣节派对 — Bloody Cats',
+      contest: 'Mr.FOX 万圣节派对 — Ghost Queen 2023 服装大赛',
+      group: 'Mr.FOX 万圣节派对 — Bloody Cats 合影',
+      cats: 'Mr.FOX 万圣节派对 — Bloody Cats',
+      portrait: 'Mr.FOX 万圣节派对 — Bloody Cats',
+      party: 'Mr.FOX 万圣节派对 — Bloody Cats',
+    },
   },
   stats: {
     headline: '引领创作者成功的新时代',
@@ -48,6 +60,12 @@ export default {
     creatorsValue: '50,000+',
     monthlyViewsValue: '数百万',
     distributionValue: '多平台',
+  },
+  brandStory: {
+    label: '我们是谁',
+    pill1: '创作者经济',
+    pill2: '20+ 平台',
+    pill3: '统一生态',
   },
   brandBanner: {
     intro: 'Mr.FOX 是引领未来创作者经济的平台',
@@ -156,7 +174,28 @@ export default {
   },
   stories: {
     label: '成功案例',
-    title: '被重新定义可能的创作者所选择',
+    title: 'Top Creator',
+  },
+  featureCards: {
+    title: '功能',
+    api: {
+      badge: '即将推出',
+      title: 'App Store & Open API',
+      desc: '面向创新的开放平台，为 AI 开发者而生。',
+    },
+    payments: {
+      title: '支付、提现与结账链接',
+      desc: '将创作变现，收款比以往更快。',
+    },
+    analytics: {
+      badge: '全新',
+      title: 'AI 分析与收入洞察',
+      desc: '清晰掌握粉丝与收入数据。',
+    },
+    subscriptions: {
+      title: '月度订阅与付费内容',
+      desc: '按您的方式建立持续收入。',
+    },
   },
   about: {
     label: '关于我们',

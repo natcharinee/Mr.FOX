@@ -63,14 +63,24 @@ export default function Header({ overHero = false }) {
           </nav>
 
           <div className="ml-auto flex shrink-0 items-center min-[901px]:ml-0">
-            <div className="hidden items-center gap-6 border-l border-white/10 pl-8 min-[901px]:flex">
-              <CtaLink href="/support#contact" size="sm">
+            <div className="hidden items-center gap-1.5 border-l border-white/10 pl-5 min-[901px]:flex">
+              <CtaLink
+                href="/support#contact"
+                size="sm"
+                className="h-9 px-4 text-[13px]"
+              >
                 {t('common.signUp')}
               </CtaLink>
-              <CtaLink href="/support#contact" variant="outline" size="sm">
+              <CtaLink
+                href="/support#contact"
+                variant="outline"
+                size="sm"
+                className="h-9 border-white/15 bg-white/[0.05] px-4 text-[13px] hover:border-white/25 hover:bg-white/10"
+              >
                 {t('common.login')}
               </CtaLink>
-              <LanguageSwitcher />
+              <span className="mx-0.5 h-5 w-px shrink-0 bg-white/10" aria-hidden="true" />
+              <LanguageSwitcher className="h-9 px-2" />
             </div>
             <Button
               variant="outline"

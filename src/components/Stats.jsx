@@ -9,7 +9,7 @@ export default function Stats() {
   return (
     <section className={section}>
       <div className={container}>
-        <h2 className="mb-12 max-w-[700px] text-[clamp(28px,4vw,44px)] font-extrabold tracking-tight">
+        <h2 className="mx-auto mb-12 max-w-[700px] text-center text-[clamp(28px,4vw,44px)] font-extrabold tracking-tight">
           {t('stats.headline')}
         </h2>
         <div className="mb-12 grid grid-cols-1 gap-6 min-[481px]:grid-cols-2 min-[769px]:grid-cols-4">

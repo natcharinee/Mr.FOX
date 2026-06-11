@@ -76,11 +76,23 @@
   --radius-4xl: calc(var(--radius) * 2.6);
   --animate-marquee: marquee 75s linear infinite;
   --animate-marquee-fast: marquee 30s linear infinite;
+  --animate-hero-ken-burns: hero-ken-burns 5s ease-out forwards;
+  --animate-hero-progress: hero-progress 5s linear forwards;
 }
 
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+@keyframes hero-ken-burns {
+  from { transform: scale(1); }
+  to { transform: scale(1.04); }
+}
+
+@keyframes hero-progress {
+  from { width: 0%; }
+  to { width: 100%; }
 }
 
 @layer base {

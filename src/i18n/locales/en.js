@@ -36,7 +36,19 @@ export default {
   },
   hero: {
     imageAlt: 'Mr.FOX Halloween Party — Bloody Cats',
+    carouselLabel: 'Mr.FOX highlights',
+    goToSlide: 'Go to slide {{number}}',
+    prevSlide: 'Previous slide',
+    nextSlide: 'Next slide',
     title: 'Empowering Creators to Build Sustainable Digital Businesses',
+    slides: {
+      featured: 'Mr.FOX Halloween Party — Bloody Cats',
+      contest: 'Mr.FOX Halloween Party — Costume Contest Ghost Queen 2023',
+      group: 'Mr.FOX Halloween Party — Bloody Cats group photo',
+      cats: 'Mr.FOX Halloween Party — Bloody Cats',
+      portrait: 'Mr.FOX Halloween Party — Bloody Cats',
+      party: 'Mr.FOX Halloween Party — Bloody Cats',
+    },
   },
   stats: {
     headline: 'Powering the next era of creator success',
@@ -48,6 +60,12 @@ export default {
     creatorsValue: '50,000+',
     monthlyViewsValue: 'Millions',
     distributionValue: 'Multi-Platform',
+  },
+  brandStory: {
+    label: 'Who We Are',
+    pill1: 'Creator Economy',
+    pill2: '20+ Platforms',
+    pill3: 'One Ecosystem',
   },
   brandBanner: {
     intro: 'Mr.FOX is a Creator Super App that connects creators and fans through content, communication, community, and commerce.',
@@ -156,7 +174,28 @@ export default {
   },
   stories: {
     label: 'Success Stories',
-    title: "Chosen by creators redefining what's possible.",
+    title: 'Top Creator',
+  },
+  featureCards: {
+    title: 'Features',
+    api: {
+      badge: 'Coming soon',
+      title: 'App Store & Open API',
+      desc: 'An open platform for innovation, designed for AI builders.',
+    },
+    payments: {
+      title: 'Payments, Payouts and Checkout Links',
+      desc: 'Monetise what you create, get paid faster than ever.',
+    },
+    analytics: {
+      badge: 'New',
+      title: 'AI Analytics & Earning Insights',
+      desc: 'Get crystal-clear clarity on your fans and earnings.',
+    },
+    subscriptions: {
+      title: 'Monthly Subscriptions & Paywalled Content',
+      desc: 'Build recurring income on your terms.',
+    },
   },
   about: {
     label: 'About Us',

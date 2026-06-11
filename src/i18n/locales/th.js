@@ -36,7 +36,19 @@ export default {
   },
   hero: {
     imageAlt: 'Mr.FOX Halloween Party — Bloody Cats',
+    carouselLabel: 'ภาพไฮไลท์ Mr.FOX',
+    goToSlide: 'ไปยังสไลด์ที่ {{number}}',
+    prevSlide: 'สไลด์ก่อนหน้า',
+    nextSlide: 'สไลด์ถัดไป',
     title: 'ขับเคลื่อน ครีเอเตอร์ สู่ธุรกิจดิจิทัลที่เติบโตอย่างยั่งยืน',
+    slides: {
+      featured: 'Mr.FOX Halloween Party — Bloody Cats',
+      contest: 'Mr.FOX Halloween Party — Costume Contest Ghost Queen 2023',
+      group: 'Mr.FOX Halloween Party — Bloody Cats ภาพหมู่ทีมงาน',
+      cats: 'Mr.FOX Halloween Party — Bloody Cats',
+      portrait: 'Mr.FOX Halloween Party — Bloody Cats',
+      party: 'Mr.FOX Halloween Party — Bloody Cats',
+    },
   },
   stats: {
     headline: 'สร้างอนาคตบทใหม่ของความสำเร็จ สำหรับครีเอเตอร์',
@@ -48,6 +60,12 @@ export default {
     creatorsValue: '50,000+',
     monthlyViewsValue: 'หลายล้าน',
     distributionValue: 'หลายแพลตฟอร์ม',
+  },
+  brandStory: {
+    label: 'เราคือใคร',
+    pill1: 'Creator Economy',
+    pill2: '20+ แพลตฟอร์ม',
+    pill3: 'ระบบนิเวศเดียว',
   },
   brandBanner: {
     intro: 'Mr.FOX คือแพลตฟอร์มที่ขับเคลื่อนเศรษฐกิจครีเอเตอร์แห่งอนาคต',
@@ -156,7 +174,28 @@ export default {
   },
   stories: {
     label: 'เรื่องราวความสำเร็จ',
-    title: 'ได้รับความไว้วางใจจากครีเอเตอร์ที่กำหนดขอบเขตใหม่',
+    title: 'Top Creator',
+  },
+  featureCards: {
+    title: 'ฟีเจอร์',
+    api: {
+      badge: 'เร็วๆ นี้',
+      title: 'App Store & Open API',
+      desc: 'แพลตฟอร์มเปิดสำหรับนวัตกรรม ออกแบบมาเพื่อนักพัฒนาและ AI builders',
+    },
+    payments: {
+      title: 'Payments, Payouts & Checkout Links',
+      desc: 'สร้างรายได้จากคอนเทนต์ของคุณ รับเงินได้เร็วกว่าที่เคย',
+    },
+    analytics: {
+      badge: 'ใหม่',
+      title: 'AI Analytics & Earning Insights',
+      desc: 'เห็นภาพชัดเจนของแฟน รายได้ และแนวโน้มการเติบโต',
+    },
+    subscriptions: {
+      title: 'Monthly Subscriptions & Paywalled Content',
+      desc: 'สร้างรายได้ประจำในแบบที่คุณกำหนดเอง',
+    },
   },
   about: {
     label: 'เกี่ยวกับเรา',
