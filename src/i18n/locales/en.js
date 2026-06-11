@@ -194,6 +194,8 @@ export default {
   stories: {
     label: 'Success Stories',
     title: 'Top Creator',
+    followers: 'followers',
+    monthlyIncome: 'Monthly income',
     ctaHeadline: 'Every community. One network of opportunity.',
     ctaHeadlineLine1: 'Every community.',
     ctaHeadlineLine2: 'One network of opportunity.',

@@ -80,6 +80,21 @@ export default function SuccessStories() {
               >
                 {story.role}
               </p>
+              <div
+                className={cn(
+                  'mt-2 space-y-1 text-center text-xs transition-all',
+                  isActive ? 'opacity-100' : 'h-0 opacity-0',
+                )}
+              >
+                <p className="text-white/55">
+                  <span className="font-semibold text-primary">{story.followersLabel}</span>{' '}
+                  {t('stories.followers')}
+                </p>
+                <p className="text-white/55">
+                  {t('stories.monthlyIncome')}{' '}
+                  <span className="font-semibold text-primary">{story.monthlyIncomeLabel}</span>
+                </p>
+              </div>
             </button>
           )}
         />

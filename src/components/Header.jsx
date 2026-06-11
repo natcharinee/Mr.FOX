@@ -55,7 +55,7 @@ export default function Header({ overHero = false }) {
               <a
                 key={link.href}
                 href={link.href}
-                className="whitespace-nowrap text-[15px] font-semibold text-white/80 transition-colors hover:text-primary"
+                className="whitespace-nowrap text-[15px] font-semibold uppercase tracking-[0.08em] text-white/80 transition-colors hover:text-primary"
               >
                 {tNav(link.key)}
               </a>
@@ -123,7 +123,7 @@ export default function Header({ overHero = false }) {
             <a
               key={link.href}
               href={link.href}
-              className="border-b border-white/5 py-3 text-[clamp(24px,4vw,32px)] font-semibold leading-tight tracking-tight transition-colors last:border-b-0 hover:text-primary"
+              className="border-b border-white/5 py-3 text-[clamp(24px,4vw,32px)] font-semibold uppercase leading-tight tracking-[0.06em] transition-colors last:border-b-0 hover:text-primary"
               onClick={() => setMenuOpen(false)}
             >
               {tNav(link.key)}

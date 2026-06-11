@@ -31,7 +31,7 @@ export default function BrandStory() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_35%_at_100%_100%,rgba(242,202,80,0.07),transparent_55%)]" />
 
       <div className={cn(container, 'relative')}>
-        <p className="mb-8 text-center text-[clamp(16px,2.2vw,20px)] font-bold uppercase tracking-[0.22em] text-primary">
+        <p className="mb-8 text-center text-[clamp(18px,2.6vw,24px)] font-bold uppercase tracking-[0.22em] text-primary">
           {t('brandStory.label')}
         </p>
 

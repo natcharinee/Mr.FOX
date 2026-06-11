@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { successStories } from '../data/content'
 import foxyCreatorsData from '../data/foxyCreators.json'
+import { enrichCreatorStats } from '../lib/creatorStats'
 import { fetchFoxyCreators } from '../lib/platformFeed'
 
-const staticCreators = foxyCreatorsData.creators?.length
+const staticCreators = (foxyCreatorsData.creators?.length
   ? foxyCreatorsData.creators
   : successStories
+).map(enrichCreatorStats)
 
 export function useFoxyCreators() {
   const [creators, setCreators] = useState(staticCreators)

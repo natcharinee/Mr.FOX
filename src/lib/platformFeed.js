@@ -1,3 +1,5 @@
+import { enrichCreatorStats } from './creatorStats'
+
 const FOXY_CONFIG = {
   feedUrl: 'https://www.foxy.club/Feed/SearchMobile',
   proxyPrefix: '/api/foxy',
@@ -88,35 +90,53 @@ export function shouldSkipCreatorName(name) {
   return upper.includes('OFFICIAL') || upper.includes('ADMIN')
 }
 
-export function parsePlatformFeedHtml(html, { role, platform, idPrefix }) {
-  const pattern =
-    /background:\s*url\((https:\/\/d2rlibv51pwtjl[^)]+)\)[\s\S]*?gallery-image[^>]*src="([^"]+)"[^>]*alt="([^"]+)"[^>]*square="([^"]+)"/gi
+function parseFeedCardStats(cardHtml) {
+  return {
+    likes: Number.parseInt(cardHtml.match(/class="score top[^"]*"[^>]*>\s*(\d+)/)?.[1] ?? '0', 10),
+    views: Number.parseInt(cardHtml.match(/countView-[^"]+">(\d+)/)?.[1] ?? '0', 10),
+    memberViews: Number.parseInt(cardHtml.match(/countViewMember-[^"]+">(\d+)/)?.[1] ?? '0', 10),
+    coins: Number.parseInt(cardHtml.match(/totalGiftCoin-[^"]+">(\d+)/)?.[1] ?? '0', 10),
+  }
+}
 
+export function parsePlatformFeedHtml(html, { role, platform, idPrefix }) {
+  const cards = html.split(/<div class="card">/i).slice(1)
   const creators = []
   const seenNames = new Set()
   const seenProfileIds = new Set()
-  let match
 
-  while ((match = pattern.exec(html)) !== null) {
-    const name = decodeHtml(match[3].trim())
+  for (const card of cards) {
+    const name = decodeHtml(card.match(/UserName">([^<]+)/)?.[1]?.trim() ?? '')
     if (!name || seenNames.has(name) || shouldSkipCreatorName(name)) continue
 
-    const profile = match[1]
-    const profileId = profile.match(/cloudfront\.net\/([^/]+)\//)?.[1] ?? name
-    if (seenProfileIds.has(profileId)) continue
+    const profileId = card.match(/loadModalDetailProfile\('([a-f0-9-]+)'\)/)?.[1]
+    if (!profileId || seenProfileIds.has(profileId)) continue
+
+    const profileMatch = card.match(/background:\s*url\((https:\/\/d2rlibv51pwtjl[^)]+)\)/i)
+    const feedImageMatch = card.match(
+      /gallery-image[^>]*src="([^"]+)"[^>]*alt="([^"]+)"[^>]*square="([^"]+)"/i,
+    )
+    if (!profileMatch || !feedImageMatch) continue
 
     seenNames.add(name)
     seenProfileIds.add(profileId)
 
-    creators.push({
-      id: `${idPrefix}-${profileId}`,
-      name,
-      role,
-      platform,
-      image: `${profile.split('?')[0]}?tr=w-800,h-1000,cm-pad_resize`,
-      profile,
-      feedImage: match[2],
-    })
+    const profile = profileMatch[1]
+    const feedStats = parseFeedCardStats(card)
+
+    creators.push(
+      enrichCreatorStats({
+        id: `${idPrefix}-${profileId}`,
+        profileId,
+        name,
+        role,
+        platform,
+        image: `${profile.split('?')[0]}?tr=w-800,h-1000,cm-pad_resize`,
+        profile,
+        feedImage: feedImageMatch[1],
+        feedStats,
+      }),
+    )
   }
 
   return creators

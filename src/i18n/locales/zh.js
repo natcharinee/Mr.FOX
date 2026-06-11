@@ -194,6 +194,8 @@ export default {
   stories: {
     label: '成功案例',
     title: 'Top Creator',
+    followers: '粉丝',
+    monthlyIncome: '月收入',
     ctaHeadline: '每一个社群，一个充满机会的网络',
     ctaHeadlineLine1: '每一个社群',
     ctaHeadlineLine2: '一个充满机会的网络',
