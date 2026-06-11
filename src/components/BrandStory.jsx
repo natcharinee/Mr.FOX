@@ -52,6 +52,12 @@ export default function BrandStory() {
 
             <h2 className="relative text-center text-[clamp(24px,3.4vw,38px)] font-extrabold leading-[1.3] tracking-tight">
               <HighlightBrand text={t('brandBanner.intro')} />
+              {t('brandBanner.introLine2') && (
+                <>
+                  <br />
+                  {t('brandBanner.introLine2')}
+                </>
+              )}
             </h2>
 
             <p className="relative mx-auto mt-6 max-w-[640px] text-center text-[clamp(15px,1.9vw,18px)] leading-[1.85] text-muted-foreground">
@@ -70,7 +76,7 @@ export default function BrandStory() {
               {pillKeys.map((key) => (
                 <span
                   key={key}
-                  className="rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-[12px] font-bold uppercase tracking-wide text-primary"
+                  className="rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-[12px] font-bold tracking-wide text-primary"
                 >
                   {t(`brandStory.${key}`)}
                 </span>

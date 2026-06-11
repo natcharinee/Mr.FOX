@@ -65,17 +65,23 @@ export default {
     label: '我们是谁',
     pill1: '创作者经济',
     pill2: '20+ 平台',
-    pill3: '统一生态',
+    pill3: 'One Account. Every Experience.',
   },
   brandBanner: {
     intro: 'Mr.FOX 是引领未来创作者经济的平台',
+    introLine2: '',
     body: '我们打造一片天地，让创作者尽情创作内容、连接粉丝、构建社群、无限变现——通过互联互通的平台网络与服务，汇聚于同一生态系统。',
     outro: '不止是一款应用，Mr.FOX 更是助力创作者成长、塑造品牌、将热爱转化为可持续事业的基础设施。',
   },
   ecosystem: {
     label: '生态系统',
     title: '20+ 平台，一个创作者生态系统',
+    titleLine1: '20+ 平台',
+    titleLine2: '一个创作者生态系统',
     subtitle: '每个细分领域，每个受众 — Mr.FOX 为引领行业的创作者打造平台',
+    subtitleLine1: '每个细分领域，每个受众 — Mr.FOX',
+    subtitleLine2: '为引领行业的创作者打造平台',
+    tagline: 'One Network. Unlimited Opportunities.',
     viewAll: '查看全部平台',
   },
   featuresPage: {
@@ -167,6 +173,7 @@ export default {
   },
   payoutCta: {
     line1: '驱动超过 $5 亿',
+    line1Suffix: '',
     line2: '创作者收入',
   },
   promo: {
@@ -175,26 +182,41 @@ export default {
   stories: {
     label: '成功案例',
     title: 'Top Creator',
+    ctaHeadline: '每一个社群，一个充满机会的网络',
+    ctaHeadlineLine1: '每一个社群',
+    ctaHeadlineLine2: '一个充满机会的网络',
+    ctaSublineBefore: '加入 ',
+    ctaSublineHighlight: '50,000+ 位创作者',
+    ctaSublineAfter: '，与 Mr.FOX 一起实现增长',
+    ctaButton: '加入我们',
   },
   featureCards: {
     title: '功能',
-    api: {
-      badge: '即将推出',
-      title: 'App Store & Open API',
-      desc: '面向创新的开放平台，为 AI 开发者而生。',
+    scrollPrev: '上一组功能',
+    scrollNext: '下一组功能',
+    chat: {
+      title: 'Chat',
+      desc: '粉丝与创作者实时聊天，建立更紧密的连接。',
     },
-    payments: {
-      title: '支付、提现与结账链接',
-      desc: '将创作变现，收款比以往更快。',
+    voiceCall: {
+      title: 'Voice Call',
+      desc: '高品质语音通话，随时随地与粉丝交流。',
     },
-    analytics: {
-      badge: '全新',
-      title: 'AI 分析与收入洞察',
-      desc: '清晰掌握粉丝与收入数据。',
+    videoCall: {
+      title: 'Video Call',
+      desc: '一对一视频通话，打造专属互动体验。',
     },
-    subscriptions: {
-      title: '月度订阅与付费内容',
-      desc: '按您的方式建立持续收入。',
+    liveStreaming: {
+      title: 'Live Streaming',
+      desc: '实时直播，与粉丝互动并即时变现。',
+    },
+    feed: {
+      title: 'Feed / Content',
+      desc: '持续更新的内容动态，关注你喜欢的创作者。',
+    },
+    following: {
+      title: '关注创作者',
+      desc: '关注喜爱的创作者，不错过任何新内容。',
     },
   },
   about: {

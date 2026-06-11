@@ -30,14 +30,50 @@ export const creatorBenefitIds = ['monetization', 'branding', 'strategy', 'marke
 
 export const solutionIds = ['management', 'marketing', 'production', 'technology', 'payment']
 
-export const featureCardIds = ['api', 'payments', 'analytics', 'subscriptions']
+export const featureCardIds = ['chat', 'voiceCall', 'videoCall', 'liveStreaming', 'feed', 'following']
 
-export const successStories = [
-  { name: 'Creator A', followers: '250K+', growth: '+340%', platform: 'FOXY' },
-  { name: 'Creator B', followers: '180K+', growth: '+220%', platform: 'CupE' },
-  { name: 'Creator C', followers: '420K+', growth: '+510%', platform: 'CLIQ' },
-  { name: 'Creator D', followers: '95K+', growth: '+180%', platform: 'Cosplay Plus' },
+const creatorHeroImages = [
+  '/images/hero/slide-4.png',
+  '/images/hero/slide-3.png',
+  '/images/hero/slide-5.png',
+  '/images/hero/slide-0.png',
 ]
+
+const creatorGradients = [
+  'from-[#4a3020] to-[#1a1008]',
+  'from-[#3a2848] to-[#140c1c]',
+  'from-[#2a3a48] to-[#0c141c]',
+  'from-[#482a38] to-[#1c0c14]',
+  'from-[#2a4028] to-[#0c180c]',
+  'from-[#403050] to-[#180c28]',
+]
+
+const topCreatorPlatforms = [
+  'FOXY',
+  'CupE',
+  'CLIQ',
+  'Himbo',
+  'Lesbie',
+  'Tomboi',
+  'BarGirl',
+  'Silom',
+  'Cosplay Plus',
+  'Expat Idols',
+  'Beauty Queen',
+  'นักศึกษา',
+  'FOXY',
+  'CupE',
+  'CLIQ',
+]
+
+export const successStories = topCreatorPlatforms.map((platform, index) => ({
+  id: `creator-${index + 1}`,
+  name: `Creator ${String.fromCharCode(65 + index)}`,
+  role: `${platform} Creator`,
+  platform,
+  image: creatorHeroImages[index % creatorHeroImages.length],
+  gradient: creatorGradients[index % creatorGradients.length],
+}))
 
 export const timeline = [
   { year: '2019', key: 'timeline2019' },

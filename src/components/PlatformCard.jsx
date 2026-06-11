@@ -1,28 +1,92 @@
 import { useI18n } from '../i18n/I18nContext'
 import PlatformMark from './PlatformMark'
-import { card, goldLink } from '@/lib/layout'
+import { goldLink } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
 const gradientHeader =
   'bg-[radial-gradient(ellipse_at_30%_50%,rgba(242,202,80,0.14)_0%,transparent_70%),linear-gradient(180deg,#141414_0%,#0a0a0a_100%)]'
 
-export default function PlatformCard({ platform, index, enhanced = false, featured = false }) {
+const showcaseThemes = {
+  foxy: 'from-[#3d3520] to-[#221e12]',
+  cupe: 'from-[#3d2f4a] to-[#241a30]',
+  cliq: 'from-[#1e3a5f] to-[#0f2744]',
+  himbo: 'from-[#2d3b2d] to-[#1a261a]',
+  lesbie: 'from-[#4a2035] to-[#2a1220]',
+  tomboi: 'from-[#2a3048] to-[#141828]',
+  bargirl: 'from-[#4a2020] to-[#2a1212]',
+  silom: 'from-[#1a2a3a] to-[#0c1824]',
+  cosplayPlus: 'from-[#3d2848] to-[#1e1028]',
+  expatIdols: 'from-[#2a3a48] to-[#0c141c]',
+  beautyQueen: 'from-[#4a3020] to-[#1a1008]',
+  naksueksa: 'from-[#2a2a35] to-[#15151c]',
+}
+
+export default function PlatformCard({
+  platform,
+  index,
+  enhanced = false,
+  featured = false,
+  variant = 'default',
+}) {
   const { t } = useI18n()
+
+  if (variant === 'showcase') {
+    const theme = showcaseThemes[platform.id] ?? 'from-[#1a1a2e] to-[#0f3460]'
+
+    return (
+      <article className="flex flex-col">
+        <div
+          className={cn(
+            'relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br',
+            theme,
+          )}
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(242,202,80,0.14),transparent_60%)]" />
+          {platform.logo ? (
+            <PlatformMark platform={platform} fill cropFrame className="absolute inset-0" />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <PlatformMark
+                platform={platform}
+                preferLetter
+                className="size-24 rounded-2xl shadow-[0_12px_32px_-8px_rgba(0,0,0,0.5)]"
+                letterClassName="text-4xl"
+              />
+            </div>
+          )}
+        </div>
+        <h3 className="mt-4 text-lg font-bold leading-snug tracking-tight">{platform.name}</h3>
+        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+          {t(`platforms.${platform.id}`)}
+        </p>
+        <a href="#" className={cn(goldLink, 'mt-4 inline-flex w-fit items-center gap-1')}>
+          {t('common.visitPlatform')}
+        </a>
+      </article>
+    )
+  }
 
   if (!enhanced) {
     return (
       <div
         className={cn(
-          card,
-          'p-7 transition-transform hover:-translate-y-0.5 hover:border-primary/30 hover:bg-[#1a1a1a]',
+          'rounded-2xl border border-border bg-[#111111] p-6 transition-all duration-200',
+          'hover:-translate-y-0.5 hover:border-primary/25 hover:bg-[#161616]',
         )}
       >
-        <PlatformMark platform={platform} preferLetter className="mb-4 size-11" letterClassName="text-lg" />
-        <h3 className="mb-2 text-lg font-bold">{platform.name}</h3>
-        <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+        <PlatformMark
+          platform={platform}
+          preferLetter
+          className="mb-5 size-11 rounded-xl"
+          letterClassName="text-lg"
+        />
+        <h3 className="mb-2 text-lg font-bold tracking-tight">{platform.name}</h3>
+        <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
           {t(`platforms.${platform.id}`)}
         </p>
-        <a href="#" className={goldLink}>{t('common.visitPlatform')}</a>
+        <a href="#" className={cn(goldLink, 'inline-flex items-center gap-1')}>
+          {t('common.visitPlatform')}
+        </a>
       </div>
     )
   }
@@ -30,8 +94,8 @@ export default function PlatformCard({ platform, index, enhanced = false, featur
   return (
     <div
       className={cn(
-        card,
-        'group flex overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_40px_-20px_rgba(242,202,80,0.25)]',
+        'rounded-2xl border border-border bg-[#111111] group flex overflow-hidden transition-all duration-300',
+        'hover:-translate-y-1 hover:border-primary/30 hover:bg-[#161616] hover:shadow-[0_20px_40px_-20px_rgba(242,202,80,0.2)]',
         featured ? 'flex-col min-[769px]:col-span-2 min-[769px]:flex-row' : 'flex-col',
       )}
     >

@@ -1,6 +1,5 @@
 import { stats } from '../data/content'
 import { useI18n } from '../i18n/I18nContext'
-import { CtaLink } from './CtaButton'
 import { container, section } from '@/lib/layout'
 
 export default function Stats() {
@@ -9,10 +8,11 @@ export default function Stats() {
   return (
     <section className={section}>
       <div className={container}>
-        <h2 className="mx-auto mb-12 max-w-[700px] text-center text-[clamp(28px,4vw,44px)] font-extrabold tracking-tight">
-          {t('stats.headline')}
-        </h2>
-        <div className="mb-12 grid grid-cols-1 gap-6 min-[481px]:grid-cols-2 min-[769px]:grid-cols-4">
+        <p className="mb-10 text-center text-[clamp(22px,3.5vw,32px)] font-bold tracking-tight">
+          {t('ecosystem.tagline')}
+        </p>
+
+        <div className="grid grid-cols-1 gap-6 min-[481px]:grid-cols-2 min-[769px]:grid-cols-4">
           {stats.map((s) => (
             <div
               key={s.labelKey}
@@ -26,10 +26,6 @@ export default function Stats() {
               </span>
             </div>
           ))}
-        </div>
-        <div className="flex flex-wrap gap-3">
-          <CtaLink href="/support#contact">{t('common.becomeCreator')}</CtaLink>
-          <CtaLink href="/platforms" variant="outline">{t('common.exploreEcosystem')}</CtaLink>
         </div>
       </div>
     </section>

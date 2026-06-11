@@ -20,8 +20,16 @@ export default function Ecosystem() {
     <section className={cn(section, 'overflow-hidden')} id="ecosystem">
       <div className={container}>
         <p className={sectionLabel}>{t('ecosystem.label')}</p>
-        <h2 className={sectionTitle}>{t('ecosystem.title')}</h2>
-        <p className={sectionSubtitle}>{t('ecosystem.subtitle')}</p>
+        <h2 className={cn(sectionTitle, 'max-w-[900px]')}>
+          {t('ecosystem.titleLine1')}
+          <br />
+          <span className="whitespace-nowrap">{t('ecosystem.titleLine2')}</span>
+        </h2>
+        <p className={cn(sectionSubtitle, 'max-w-[720px] leading-relaxed')}>
+          {t('ecosystem.subtitleLine1')}
+          <br />
+          <span className="whitespace-nowrap">{t('ecosystem.subtitleLine2')}</span>
+        </p>
 
         <div className="mt-12 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-4">
           {previewPlatforms.map((p) => (

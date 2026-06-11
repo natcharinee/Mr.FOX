@@ -1,140 +1,289 @@
+import { useRef } from 'react'
 import { featureCardIds } from '../data/content'
 import { useI18n } from '../i18n/I18nContext'
 import { container, section, sectionTitle } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
+const chatBubbles = [
+  {
+    text: 'สวัสดีครับ มีคอนเทนต์ใหม่ไหม?',
+    className: 'ml-auto w-[78%] rounded-2xl rounded-tr-md bg-primary/90 px-3 py-2 text-[11px] font-medium text-black',
+  },
+  {
+    text: 'มีแล้วค่า อัปโหลดให้แล้ว!',
+    className: 'w-[72%] rounded-2xl rounded-tl-md border border-white/10 bg-white/10 px-3 py-2 text-[11px] text-white/90 backdrop-blur-sm',
+  },
+  {
+    text: 'เยี่ยมเลย!',
+    className: 'ml-auto w-[55%] rounded-2xl rounded-tr-md bg-primary/90 px-3 py-2 text-[11px] font-medium text-black',
+  },
+]
+
+const motionPop = 'animate-feature-pop-in opacity-0 motion-reduce:animate-none motion-reduce:opacity-100'
+
+const liveChatMessages = [
+  { text: 'สวยมากค่ะ!', delay: 0 },
+  { text: '❤️❤️❤️', delay: 1.1 },
+  { text: 'เยี่ยมเลย', delay: 2.2 },
+  { text: 'ส่งของขวัญแล้ว', delay: 3.3 },
+]
+
+const liveHearts = [
+  { left: '72%', delay: 0.3 },
+  { left: '80%', delay: 1 },
+  { left: '66%', delay: 1.7 },
+  { left: '76%', delay: 2.5 },
+]
+
+const visualThemes = {
+  chat: 'from-[#1e3a5f] to-[#0f2744]',
+  voiceCall: 'from-[#2d3b2d] to-[#1a261a]',
+  videoCall: 'from-[#3d2f4a] to-[#241a30]',
+  liveStreaming: 'from-[#4a2020] to-[#2a1212]',
+  feed: 'from-[#2a2a35] to-[#15151c]',
+  following: 'from-[#3d3520] to-[#221e12]',
+}
+
 function FeatureVisual({ id }) {
-  if (id === 'api') {
-    return (
-      <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#7ec8f7] via-[#5eb0ef] to-[#3d8fd9]">
-        <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_20%_30%,white_0,transparent_45%),radial-gradient(circle_at_80%_70%,white_0,transparent_40%)]" />
-        <div className="relative flex size-24 flex-col items-center justify-center rounded-[22px] bg-[#2f8fe8] shadow-[0_12px_40px_rgba(0,0,0,0.2)]">
-          <svg viewBox="0 0 48 32" className="mb-1 h-8 w-12 text-white/90" aria-hidden="true">
-            <rect x="4" y="6" width="28" height="20" rx="4" fill="currentColor" opacity="0.35" />
-            <rect x="12" y="2" width="28" height="20" rx="4" fill="currentColor" opacity="0.55" />
-            <rect x="20" y="8" width="24" height="18" rx="4" fill="currentColor" />
-          </svg>
-          <span className="text-sm font-extrabold tracking-tight text-white">API+</span>
-        </div>
-      </div>
-    )
-  }
-
-  if (id === 'payments') {
-    return (
-      <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-[#f4f4f5]">
-        <div className="relative flex size-36 items-center justify-center">
-          <svg viewBox="0 0 120 120" className="absolute inset-0 size-full -rotate-90" aria-hidden="true">
-            <circle cx="60" cy="60" r="52" fill="none" stroke="#e4e4e7" strokeWidth="10" />
-            <circle
-              cx="60"
-              cy="60"
-              r="52"
-              fill="none"
-              stroke="#22c55e"
-              strokeWidth="10"
-              strokeDasharray="245 327"
-              strokeLinecap="round"
-            />
-          </svg>
-          <div className="relative text-center">
-            <p className="text-2xl font-extrabold tracking-tight text-black">฿12,417</p>
-            <p className="mt-0.5 text-xs font-medium text-[#71717a]">Last 30 days</p>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  if (id === 'analytics') {
-    return (
-      <div className="flex aspect-[4/3] flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-b from-[#3d4a2f] to-[#2a3320] p-5">
-        <div>
-          <p className="text-[11px] font-medium text-white/55">Your earnings last 30 days</p>
-          <p className="mt-1 text-2xl font-extrabold tracking-tight text-white">฿13,495</p>
-        </div>
-        <svg viewBox="0 0 200 60" className="h-14 w-full" aria-hidden="true" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#4ade80" stopOpacity="0.35" />
-              <stop offset="100%" stopColor="#4ade80" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-          <path
-            d="M0,45 L30,38 L60,42 L90,28 L120,32 L150,18 L180,12 L200,8 L200,60 L0,60 Z"
-            fill="url(#chartFill)"
-          />
-          <path
-            d="M0,45 L30,38 L60,42 L90,28 L120,32 L150,18 L180,12 L200,8"
-            fill="none"
-            stroke="#4ade80"
-            strokeWidth="3"
-            strokeLinecap="round"
-          />
-        </svg>
-        <div className="flex justify-between text-[10px] font-semibold uppercase tracking-wider text-white/40">
-          <span>July</span>
-          <span>August</span>
-        </div>
-      </div>
-    )
-  }
+  const theme = visualThemes[id] ?? 'from-[#1a1a2e] to-[#0f3460]'
 
   return (
-    <div className="relative flex aspect-[4/3] items-end overflow-hidden rounded-2xl bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] p-4">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(242,202,80,0.15),transparent_55%)]" />
-      <div className="relative w-full space-y-2">
-        {[
-          ['FOXY', 'Creator'],
-          ['CupE', 'Model'],
-          ['CLIQ', 'Ambassador'],
-        ].map(([name, role]) => (
-          <div
-            key={name}
-            className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-black/45 px-3 py-2 backdrop-blur-sm"
-          >
-            <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-[#8b6914] text-xs font-bold text-black">
-              {name.charAt(0)}
+    <div className={cn('relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br p-5', theme)}>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(242,202,80,0.12),transparent_60%)]" />
+
+      {id === 'chat' && (
+        <div className="relative w-full max-w-[220px] space-y-2.5">
+          {chatBubbles.map((bubble, i) => (
+            <div
+              key={bubble.text}
+              className={cn(
+                bubble.className,
+                'animate-feature-chat-bubble opacity-0 motion-reduce:animate-none motion-reduce:opacity-100',
+              )}
+              style={{ animationDelay: `${i * 0.65}s` }}
+            >
+              {bubble.text}
             </div>
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-xs font-bold text-white">{name}</p>
-              <p className="truncate text-[10px] text-white/50">{role}</p>
-            </div>
-            <span className="shrink-0 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-semibold text-white">
-              Subscribe
-            </span>
+          ))}
+        </div>
+      )}
+
+      {id === 'voiceCall' && (
+        <div className="relative flex flex-col items-center gap-4">
+          <div className="flex size-16 items-center justify-center rounded-full border-2 border-primary/40 bg-primary/15">
+            <svg viewBox="0 0 24 24" className="size-7 text-primary" aria-hidden="true">
+              <path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.6 11.6 0 003.64.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.6 11.6 0 00.58 3.64 1 1 0 01-.24 1z" />
+            </svg>
           </div>
-        ))}
-      </div>
+          <div className="flex h-8 items-end gap-1">
+            {[3, 6, 4, 8, 5, 9, 4, 7, 3, 6, 5, 8].map((h, i) => (
+              <span
+                key={i}
+                className="w-1 origin-bottom rounded-full bg-primary/70 motion-reduce:animate-none animate-feature-wave"
+                style={{ height: `${h * 3}px`, animationDelay: `${i * 0.08}s` }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {id === 'videoCall' && (
+        <div className="relative w-full max-w-[240px] overflow-hidden rounded-2xl border border-white/15 bg-black/40 shadow-lg">
+          <div className="flex items-center justify-between border-b border-white/10 px-3 py-2">
+            <span className="text-[10px] font-semibold text-white/70">Video Call</span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-[9px] font-medium tabular-nums text-white/50 motion-reduce:animate-none animate-feature-pulse">
+                00:24
+              </span>
+              <span className="size-2 rounded-full bg-[#4ade80] motion-reduce:animate-none animate-feature-pulse" />
+            </div>
+          </div>
+          <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-gradient-to-br from-[#2a2035] to-[#141018]">
+            <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(242,202,80,0.12),transparent_55%)]" />
+            {[0, 0.7].map((delay) => (
+              <span
+                key={delay}
+                className="pointer-events-none absolute size-20 rounded-full border border-primary/30 motion-reduce:hidden animate-feature-video-ring"
+                style={{ animationDelay: `${delay}s` }}
+              />
+            ))}
+            <div className="relative flex size-14 items-center justify-center rounded-full border-2 border-primary/30 bg-primary/15 text-2xl font-bold text-primary motion-reduce:animate-none animate-feature-video-breathe">
+              F
+            </div>
+            <div
+              className="absolute bottom-2 right-2 overflow-hidden rounded-lg border border-white/20 bg-black/70 shadow-lg motion-reduce:animate-none animate-feature-pip-in"
+              style={{ animationDelay: '0.4s' }}
+            >
+              <div className="flex h-11 w-14 items-center justify-center bg-gradient-to-br from-white/10 to-white/0">
+                <div className="flex size-7 items-center justify-center rounded-full bg-white/10 text-[10px] font-bold text-white">
+                  C
+                </div>
+              </div>
+              <div className="absolute bottom-0.5 left-1 flex gap-px">
+                {[2, 4, 3, 5].map((h, i) => (
+                  <span
+                    key={i}
+                    className="w-0.5 origin-bottom rounded-full bg-primary/80 motion-reduce:animate-none animate-feature-wave"
+                    style={{ height: `${h * 2}px`, animationDelay: `${i * 0.1}s` }}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
+            <span className="rounded-full bg-red-500/90 px-3 py-1 text-[10px] font-bold text-white">End</span>
+          </div>
+        </div>
+      )}
+
+      {id === 'liveStreaming' && (
+        <div className="relative w-full max-w-[240px] overflow-hidden rounded-2xl border border-white/15 bg-black/50 shadow-lg">
+          <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-[#4a1010] to-[#1a0808]">
+            <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_45%_35%,rgba(242,202,80,0.18),transparent_55%)] motion-reduce:animate-none animate-feature-live-ken-burns" />
+            <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/25" />
+
+            <div className="absolute left-2.5 top-2.5 flex items-center gap-1 rounded bg-red-600 px-1.5 py-0.5 shadow-sm">
+              <span className="size-1.5 rounded-full bg-white motion-reduce:animate-none animate-feature-pulse" />
+              <span className="text-[9px] font-bold uppercase tracking-wide text-white">Live</span>
+            </div>
+
+            <div className="absolute right-2.5 top-2.5 flex items-center gap-1 rounded-full bg-black/60 px-2 py-0.5 backdrop-blur-sm">
+              <svg viewBox="0 0 24 24" className="size-2.5 text-white/70" aria-hidden="true">
+                <path fill="currentColor" d="M12 4.5C7 4.5 2.7 7.6 1 12c1.7 4.4 6 7.5 11 7.5s9.3-3.1 11-7.5c-1.7-4.4-6-7.5-11-7.5zm0 12.5a5 5 0 110-10 5 5 0 010 10zm0-8a3 3 0 100 6 3 3 0 000-6z" />
+              </svg>
+              <span className="text-[9px] font-semibold tabular-nums text-white/90 motion-reduce:animate-none animate-feature-pulse">
+                1.2K
+              </span>
+            </div>
+
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative flex size-14 items-center justify-center rounded-full border-2 border-primary/40 bg-primary/15 text-xl font-bold text-primary shadow-[0_0_24px_rgba(242,202,80,0.2)] motion-reduce:animate-none animate-feature-video-breathe">
+                F
+              </div>
+            </div>
+
+            <div className="absolute bottom-2 left-2 flex w-[58%] flex-col gap-1">
+              {liveChatMessages.map((msg) => (
+                <span
+                  key={msg.text}
+                  className="w-fit max-w-full truncate rounded-md bg-black/55 px-1.5 py-0.5 text-[8px] font-medium text-white/90 backdrop-blur-sm opacity-0 motion-reduce:animate-none motion-reduce:opacity-100 animate-feature-live-chat-rise"
+                  style={{ animationDelay: `${msg.delay}s` }}
+                >
+                  {msg.text}
+                </span>
+              ))}
+            </div>
+
+            {liveHearts.map((heart, i) => (
+              <span
+                key={i}
+                className="pointer-events-none absolute bottom-6 text-xs opacity-0 motion-reduce:hidden animate-feature-live-heart-rise"
+                style={{ left: heart.left, animationDelay: `${heart.delay}s` }}
+                aria-hidden="true"
+              >
+                ❤️
+              </span>
+            ))}
+
+            <div
+              className="absolute bottom-9 right-2.5 flex items-center gap-1 rounded-full border border-primary/30 bg-primary/20 px-2 py-0.5 text-[8px] font-bold text-primary opacity-0 motion-reduce:animate-none motion-reduce:opacity-100 animate-feature-live-gift-pop"
+              style={{ animationDelay: '1.6s' }}
+            >
+              <span aria-hidden="true">🎁</span>
+              <span>+50</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {id === 'feed' && (
+        <div className="relative w-full max-w-[220px] space-y-2">
+          {[1, 2, 3].map((n) => (
+            <div
+              key={n}
+              className={cn('flex gap-2.5 rounded-xl border border-white/10 bg-white/5 p-2.5 backdrop-blur-sm', motionPop)}
+              style={{ animationDelay: `${(n - 1) * 0.35}s` }}
+            >
+              <div className="size-9 shrink-0 rounded-lg bg-gradient-to-br from-primary/40 to-primary/10" />
+              <div className="min-w-0 flex-1 space-y-1.5">
+                <div className="h-2 w-3/4 rounded-full bg-white/20" />
+                <div className="h-1.5 w-full rounded-full bg-white/10" />
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {id === 'following' && (
+        <div className="relative w-full max-w-[220px] space-y-2">
+          {['FOXY', 'CupE', 'CLIQ'].map((name, i) => (
+            <div
+              key={name}
+              className={cn('flex items-center gap-2.5 rounded-xl border border-white/10 bg-black/35 px-3 py-2 backdrop-blur-sm', motionPop)}
+              style={{ animationDelay: `${i * 0.35}s` }}
+            >
+              <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-[#8b6914] text-xs font-bold text-black">
+                {name.charAt(0)}
+              </div>
+              <p className="min-w-0 flex-1 truncate text-xs font-bold text-white">{name}</p>
+              <span className="shrink-0 rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold text-black">
+                Follow
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
+  )
+}
+
+function ScrollArrow({ direction }) {
+  return (
+    <svg viewBox="0 0 24 24" className="size-4" aria-hidden="true">
+      <path
+        d={direction === 'left' ? 'M15 6l-6 6 6 6' : 'M9 6l6 6-6 6'}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   )
 }
 
 export default function FeatureCards() {
   const { t } = useI18n()
+  const scrollRef = useRef(null)
+
+  const scroll = (direction) => {
+    const el = scrollRef.current
+    if (!el) return
+    const card = el.querySelector('article')
+    const amount = (card?.offsetWidth ?? 300) + 24
+    el.scrollBy({ left: direction * amount, behavior: 'smooth' })
+  }
 
   return (
-    <section className={section} id="features">
+    <section className={cn(section, 'overflow-hidden')} id="features">
       <div className={container}>
         <h2 className={cn(sectionTitle, 'text-center')}>{t('featureCards.title')}</h2>
+      </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 min-[641px]:grid-cols-2 min-[1101px]:grid-cols-4 min-[1101px]:gap-6">
+      <div className="mt-12 [mask-image:linear-gradient(90deg,transparent,#000_4%,#000_96%,transparent)]">
+        <div
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto scroll-smooth px-6 pb-2 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        >
           {featureCardIds.map((id) => {
             const badgeKey = t(`featureCards.${id}.badge`)
             const hasBadge = badgeKey && badgeKey !== `featureCards.${id}.badge`
 
             return (
-              <article key={id} className="flex flex-col">
+              <article key={id} className="flex w-[min(300px,78vw)] shrink-0 snap-start flex-col">
                 <FeatureVisual id={id} />
                 {hasBadge && (
-                  <span
-                    className={cn(
-                      'mt-4 inline-flex w-fit rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wide',
-                      id === 'analytics'
-                        ? 'bg-[#4ade80] text-black'
-                        : 'border border-white/10 bg-white/8 text-white/80',
-                    )}
-                  >
+                  <span className="mt-4 inline-flex w-fit rounded-full border border-white/10 bg-white/8 px-3 py-1 text-[11px] font-bold tracking-wide text-white/80">
                     {badgeKey}
                   </span>
                 )}
@@ -148,6 +297,25 @@ export default function FeatureCards() {
             )
           })}
         </div>
+      </div>
+
+      <div className="mt-6 flex justify-center gap-3">
+        <button
+          type="button"
+          aria-label={t('featureCards.scrollPrev')}
+          onClick={() => scroll(-1)}
+          className="flex size-10 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors hover:border-white/40 hover:bg-white/5 hover:text-white"
+        >
+          <ScrollArrow direction="left" />
+        </button>
+        <button
+          type="button"
+          aria-label={t('featureCards.scrollNext')}
+          onClick={() => scroll(1)}
+          className="flex size-10 items-center justify-center rounded-full border border-white/20 text-white/80 transition-colors hover:border-white/40 hover:bg-white/5 hover:text-white"
+        >
+          <ScrollArrow direction="right" />
+        </button>
       </div>
     </section>
   )

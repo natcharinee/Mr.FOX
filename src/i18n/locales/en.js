@@ -65,17 +65,23 @@ export default {
     label: 'Who We Are',
     pill1: 'Creator Economy',
     pill2: '20+ Platforms',
-    pill3: 'One Ecosystem',
+    pill3: 'One Account. Every Experience.',
   },
   brandBanner: {
     intro: 'Mr.FOX is a Creator Super App that connects creators and fans through content, communication, community, and commerce.',
+    introLine2: '',
     body: 'From live streaming and direct messaging to premium memberships and token-powered experiences, Mr.FOX provides everything creators need to build, engage, and monetize their audience in one unified ecosystem.',
     outro: '',
   },
   ecosystem: {
     label: 'Ecosystem',
     title: '20+ platforms. One creator ecosystem.',
+    titleLine1: '20+ platforms.',
+    titleLine2: 'One creator ecosystem.',
     subtitle: 'Every niche, every audience — Mr.FOX powers platforms built for creators who lead their category.',
+    subtitleLine1: 'Every niche, every audience — Mr.FOX powers platforms',
+    subtitleLine2: 'built for creators who lead their category.',
+    tagline: 'One Network. Unlimited Opportunities.',
     viewAll: 'View all platforms',
   },
   featuresPage: {
@@ -167,6 +173,7 @@ export default {
   },
   payoutCta: {
     line1: 'Powering over $500m in',
+    line1Suffix: '',
     line2: 'creator payouts',
   },
   promo: {
@@ -175,26 +182,41 @@ export default {
   stories: {
     label: 'Success Stories',
     title: 'Top Creator',
+    ctaHeadline: 'Every community. One network of opportunity.',
+    ctaHeadlineLine1: 'Every community.',
+    ctaHeadlineLine2: 'One network of opportunity.',
+    ctaSublineBefore: 'Join ',
+    ctaSublineHighlight: '50,000+ creators',
+    ctaSublineAfter: ' scaling their success with Mr.FOX.',
+    ctaButton: 'Join us',
   },
   featureCards: {
     title: 'Features',
-    api: {
-      badge: 'Coming soon',
-      title: 'App Store & Open API',
-      desc: 'An open platform for innovation, designed for AI builders.',
+    scrollPrev: 'Previous features',
+    scrollNext: 'Next features',
+    chat: {
+      title: 'Chat',
+      desc: 'Real-time messaging between fans and creators.',
     },
-    payments: {
-      title: 'Payments, Payouts and Checkout Links',
-      desc: 'Monetise what you create, get paid faster than ever.',
+    voiceCall: {
+      title: 'Voice Call',
+      desc: 'High-quality voice calls with your community.',
     },
-    analytics: {
-      badge: 'New',
-      title: 'AI Analytics & Earning Insights',
-      desc: 'Get crystal-clear clarity on your fans and earnings.',
+    videoCall: {
+      title: 'Video Call',
+      desc: 'Face-to-face video calls for personal fan experiences.',
     },
-    subscriptions: {
-      title: 'Monthly Subscriptions & Paywalled Content',
-      desc: 'Build recurring income on your terms.',
+    liveStreaming: {
+      title: 'Live Streaming',
+      desc: 'Go live, engage fans, and earn in real time.',
+    },
+    feed: {
+      title: 'Feed / Content',
+      desc: 'A constantly updated feed from creators you follow.',
+    },
+    following: {
+      title: 'Following Creators',
+      desc: 'Follow your favourite creators and never miss new content.',
     },
   },
   about: {
