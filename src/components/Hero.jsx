@@ -29,18 +29,20 @@ export default function Hero() {
   const goNext = () => goTo((active + 1) % slideCount)
 
   return (
-    <section className="flex flex-col bg-background" id="home">
-      <div
-        className="group relative w-full overflow-hidden bg-black aspect-[1007/1024]"
-        aria-roledescription="carousel"
-        aria-label={t('hero.carouselLabel')}
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        onFocus={() => setPaused(true)}
-        onBlur={(e) => {
-          if (!e.currentTarget.contains(e.relatedTarget)) setPaused(false)
-        }}
-      >
+    <section className="flex flex-col bg-background pt-[clamp(88px,10vw,112px)]" id="home">
+      <div className={container}>
+        <div
+          className="group relative w-full overflow-hidden rounded-[28px] border border-primary/20 bg-black shadow-[0_0_100px_rgba(242,202,80,0.1)] aspect-[1007/1024]"
+          aria-roledescription="carousel"
+          aria-label={t('hero.carouselLabel')}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onFocus={() => setPaused(true)}
+          onBlur={(e) => {
+            if (!e.currentTarget.contains(e.relatedTarget)) setPaused(false)
+          }}
+        >
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
         {heroSlides.map((slide, index) => (
           <img
             key={slide.id}
@@ -111,6 +113,7 @@ export default function Hero() {
             </div>
           </>
         )}
+        </div>
       </div>
 
       <div className="bg-background py-[clamp(40px,5vw,64px)]">
