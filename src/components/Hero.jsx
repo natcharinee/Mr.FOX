@@ -123,7 +123,7 @@ export default function Hero() {
           </h1>
           <div className="flex shrink-0 flex-wrap justify-end gap-3 max-[900px]:w-full max-[900px]:justify-start max-[480px]:w-full max-[480px]:flex-col">
             <CtaLink
-              href="https://mrfox.com"
+              href="https://www.mrfox.com/Login/Index"
               target="_blank"
               rel="noopener noreferrer"
               className="max-[480px]:w-full max-[480px]:justify-center"

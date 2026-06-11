@@ -65,7 +65,7 @@ export default function Header({ overHero = false }) {
           <div className="ml-auto flex shrink-0 items-center min-[901px]:ml-0">
             <div className="hidden items-center gap-1.5 border-l border-white/10 pl-5 min-[901px]:flex">
               <CtaLink
-                href="https://mrfox.com"
+                href="https://www.mrfox.com/Login/Index"
                 target="_blank"
                 rel="noopener noreferrer"
                 size="sm"
@@ -74,7 +74,9 @@ export default function Header({ overHero = false }) {
                 {t('common.signUp')}
               </CtaLink>
               <CtaLink
-                href="/support#contact"
+                href="https://www.mrfox.com/Login/Index"
+                target="_blank"
+                rel="noopener noreferrer"
                 variant="outline"
                 size="sm"
                 className="h-9 border-white/15 bg-white/[0.05] px-4 text-[13px] hover:border-white/25 hover:bg-white/10"

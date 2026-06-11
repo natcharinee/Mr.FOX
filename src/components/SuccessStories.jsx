@@ -122,7 +122,9 @@ export default function SuccessStories() {
             {t('stories.ctaSublineAfter')}
           </p>
           <div className="mt-8 flex justify-center">
-            <CtaLink href="/support#contact">{t('stories.ctaButton')}</CtaLink>
+            <CtaLink href="https://www.mrfox.com/Login/Index" target="_blank" rel="noopener noreferrer">
+              {t('stories.ctaButton')}
+            </CtaLink>
           </div>
         </div>
       </div>
