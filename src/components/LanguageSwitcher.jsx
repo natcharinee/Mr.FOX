@@ -1,4 +1,4 @@
-import { Check, ChevronDown } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { useI18n } from '../i18n/I18nContext'
 import { Button } from '@/components/ui/button'
 import {
@@ -43,7 +43,7 @@ export default function LanguageSwitcher({ className = '', inOverlay = false }) 
         align="end"
         sideOffset={8}
         className={cn(
-          'w-[168px] min-w-0 border border-white/10 bg-[#141414] p-1 shadow-xl',
+          'z-[110] w-auto min-w-0 border border-white/10 bg-[#141414] p-1.5 shadow-xl',
           inOverlay && 'z-[250]',
         )}
       >
@@ -53,16 +53,15 @@ export default function LanguageSwitcher({ className = '', inOverlay = false }) 
             <DropdownMenuItem
               key={code}
               onClick={() => setLocale(code)}
+              aria-label={label}
               className={cn(
-                'flex w-full cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 text-sm outline-none',
+                'flex cursor-pointer items-center justify-center rounded-lg p-2.5 outline-none',
                 isActive
-                  ? 'bg-primary/10 text-foreground focus:bg-primary/14 focus:text-foreground'
-                  : 'text-muted-foreground focus:bg-white/[0.06] focus:text-foreground',
+                  ? 'bg-primary/10 ring-1 ring-primary/30 focus:bg-primary/14'
+                  : 'focus:bg-white/[0.06]',
               )}
             >
               <FlagIcon code={code} className={flagClass} />
-              <span className="min-w-0 flex-1 font-medium">{label}</span>
-              {isActive && <Check className="size-4 shrink-0 text-primary" aria-hidden="true" />}
             </DropdownMenuItem>
           )
         })}

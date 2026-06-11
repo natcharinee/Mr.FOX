@@ -7,6 +7,8 @@ import { cn } from '@/lib/utils'
 const gradientHeader =
   'bg-[radial-gradient(ellipse_at_30%_50%,rgba(242,202,80,0.14)_0%,transparent_70%),linear-gradient(180deg,#141414_0%,#0a0a0a_100%)]'
 
+const primaryMarkIds = new Set(['foxy', 'cupe'])
+
 const showcaseThemes = {
   foxy: 'from-[#3d3520] to-[#221e12]',
   cupe: 'from-[#3d2f4a] to-[#241a30]',
@@ -31,8 +33,57 @@ export default function PlatformCard({
 }) {
   const { t } = useI18n()
 
+  if (variant === 'catalog') {
+    const hasPrimaryMark = primaryMarkIds.has(platform.id)
+
+    return (
+      <article
+        className={cn(
+          'group relative flex overflow-hidden rounded-2xl border border-white/8 bg-[#161616] transition-all duration-300',
+          'hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-[0_20px_50px_-24px_rgba(242,202,80,0.22)]',
+          featured ? 'min-h-[240px] flex-col min-[640px]:flex-row min-[640px]:items-stretch' : 'min-h-[220px] flex-col',
+        )}
+      >
+        {featured && hasPrimaryMark ? (
+          <div className="relative flex min-h-[180px] shrink-0 items-center justify-center bg-primary min-[640px]:min-h-0 min-[640px]:w-[44%]">
+            <span className="text-7xl font-black leading-none text-black">{platform.name.charAt(0)}</span>
+          </div>
+        ) : null}
+
+        <div className={cn('flex flex-1 flex-col p-6', featured && 'min-[640px]:justify-center min-[640px]:p-8')}>
+          {!(featured && hasPrimaryMark) && (
+            <div
+              className={cn(
+                'mb-5 flex size-11 items-center justify-center overflow-hidden rounded-xl',
+                hasPrimaryMark ? 'bg-primary' : 'border border-white/8 bg-[#222222]',
+              )}
+            >
+              <span className={cn('text-base font-extrabold leading-none', hasPrimaryMark ? 'text-black' : 'text-white/90')}>
+                {platform.name.charAt(0)}
+              </span>
+            </div>
+          )}
+
+          <h3 className={cn('font-bold tracking-tight text-white', featured ? 'text-2xl' : 'text-lg')}>
+            {platform.name}
+          </h3>
+          <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+            {t(`platforms.${platform.id}`)}
+          </p>
+
+          <div className="mt-6 flex items-center justify-between border-t border-white/6 pt-4">
+            <span className="text-[11px] font-semibold tracking-[0.14em] text-primary/90">
+              {t('ecosystem.connected')}
+            </span>
+            <Zap className="size-4 fill-primary/90 text-primary/90" strokeWidth={0} />
+          </div>
+        </div>
+      </article>
+    )
+  }
+
   if (variant === 'ecosystem') {
-    const isFoxy = platform.id === 'foxy'
+    const hasPrimaryMark = primaryMarkIds.has(platform.id)
 
     return (
       <article
@@ -44,13 +95,13 @@ export default function PlatformCard({
         <div
           className={cn(
             'mb-5 flex size-11 items-center justify-center overflow-hidden rounded-xl',
-            isFoxy ? 'bg-primary' : 'border border-white/8 bg-[#222222]',
+            hasPrimaryMark ? 'bg-primary' : 'border border-white/8 bg-[#222222]',
           )}
         >
           <span
             className={cn(
               'text-base font-extrabold leading-none',
-              isFoxy ? 'text-black' : 'text-white/90',
+              hasPrimaryMark ? 'text-black' : 'text-white/90',
             )}
           >
             {platform.name.charAt(0)}

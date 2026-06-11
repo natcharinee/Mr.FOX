@@ -10,6 +10,7 @@ export const heroSlides = [
 ]
 
 export const PLATFORM_PREVIEW_COUNT = 8
+export const PLATFORM_NETWORK_COUNT = 20
 
 export const platforms = [
   { id: 'foxy', name: 'FOXY', logo: '/images/platforms/foxy.png' },

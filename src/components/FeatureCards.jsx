@@ -252,7 +252,52 @@ function ScrollArrow({ direction }) {
   )
 }
 
-export default function FeatureCards() {
+const wideFeatureIds = new Set(['videoCall', 'liveStreaming'])
+
+function FeaturePoints({ t, id }) {
+  const points = [1, 2, 3]
+    .map((n) => t(`featureCards.${id}.point${n}`))
+    .filter((point) => point && !point.startsWith('featureCards.'))
+
+  if (!points.length) return null
+
+  return (
+    <ul className="mt-4 space-y-2">
+      {points.map((point) => (
+        <li
+          key={point}
+          className="flex gap-2.5 text-sm leading-relaxed text-muted-foreground before:mt-2 before:size-1.5 before:shrink-0 before:rounded-full before:bg-primary"
+        >
+          {point}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function FeatureCarouselCard({ t, id }) {
+  const badgeKey = t(`featureCards.${id}.badge`)
+  const hasBadge = badgeKey && badgeKey !== `featureCards.${id}.badge`
+
+  return (
+    <article className="flex w-[min(300px,78vw)] shrink-0 snap-start flex-col">
+      <FeatureVisual id={id} />
+      {hasBadge && (
+        <span className="mt-4 inline-flex w-fit rounded-full border border-white/10 bg-white/8 px-3 py-1 text-[11px] font-bold tracking-wide text-white/80">
+          {badgeKey}
+        </span>
+      )}
+      <h3 className="mt-4 text-lg font-bold leading-snug tracking-tight">
+        {t(`featureCards.${id}.title`)}
+      </h3>
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+        {t(`featureCards.${id}.desc`)}
+      </p>
+    </article>
+  )
+}
+
+function FeatureCarousel() {
   const { t } = useI18n()
   const scrollRef = useRef(null)
 
@@ -275,27 +320,9 @@ export default function FeatureCards() {
           ref={scrollRef}
           className="flex gap-6 overflow-x-auto scroll-smooth px-6 pb-2 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
-          {featureCardIds.map((id) => {
-            const badgeKey = t(`featureCards.${id}.badge`)
-            const hasBadge = badgeKey && badgeKey !== `featureCards.${id}.badge`
-
-            return (
-              <article key={id} className="flex w-[min(300px,78vw)] shrink-0 snap-start flex-col">
-                <FeatureVisual id={id} />
-                {hasBadge && (
-                  <span className="mt-4 inline-flex w-fit rounded-full border border-white/10 bg-white/8 px-3 py-1 text-[11px] font-bold tracking-wide text-white/80">
-                    {badgeKey}
-                  </span>
-                )}
-                <h3 className="mt-4 text-lg font-bold leading-snug tracking-tight">
-                  {t(`featureCards.${id}.title`)}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {t(`featureCards.${id}.desc`)}
-                </p>
-              </article>
-            )
-          })}
+          {featureCardIds.map((id) => (
+            <FeatureCarouselCard key={id} t={t} id={id} />
+          ))}
         </div>
       </div>
 
@@ -319,4 +346,64 @@ export default function FeatureCards() {
       </div>
     </section>
   )
+}
+
+function FeatureGridCard({ t, id }) {
+  const isWide = wideFeatureIds.has(id)
+  const detail = t(`featureCards.${id}.detail`)
+  const hasDetail = detail && !detail.startsWith('featureCards.')
+
+  return (
+    <article
+      className={cn(
+        'group overflow-hidden rounded-2xl border border-white/8 bg-[#161616] transition-all duration-300',
+        'hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-[0_20px_50px_-24px_rgba(242,202,80,0.22)]',
+        isWide ? 'lg:col-span-2 lg:grid lg:grid-cols-2 lg:items-stretch' : 'flex flex-col',
+      )}
+    >
+      <div className={cn('p-4', isWide && 'lg:p-6')}>
+        <FeatureVisual id={id} />
+      </div>
+
+      <div
+        className={cn(
+          'flex flex-1 flex-col border-t border-white/6 p-6',
+          isWide && 'lg:justify-center lg:border-t-0 lg:border-l lg:p-8',
+        )}
+      >
+        <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-primary/90">
+          {t('featuresPage.meta')}
+        </span>
+        <h3 className={cn('mt-2 font-bold tracking-tight text-white', isWide ? 'text-2xl' : 'text-xl')}>
+          {t(`featureCards.${id}.title`)}
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          {t(`featureCards.${id}.desc`)}
+        </p>
+        {hasDetail && (
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground/90">
+            {detail}
+          </p>
+        )}
+        <FeaturePoints t={t} id={id} />
+      </div>
+    </article>
+  )
+}
+
+function FeatureGrid() {
+  const { t } = useI18n()
+
+  return (
+    <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+      {featureCardIds.map((id) => (
+        <FeatureGridCard key={id} t={t} id={id} />
+      ))}
+    </div>
+  )
+}
+
+export default function FeatureCards({ variant = 'carousel' }) {
+  if (variant === 'grid') return <FeatureGrid />
+  return <FeatureCarousel />
 }
