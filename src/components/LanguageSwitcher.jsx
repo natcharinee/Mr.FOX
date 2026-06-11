@@ -27,7 +27,7 @@ export default function LanguageSwitcher({ className = '', inOverlay = false }) 
           variant="outline"
           size="sm"
           className={cn(
-            'gap-1.5 rounded-full border-border bg-white/[0.08] text-foreground hover:border-white/20 hover:bg-white/[0.12] data-[state=open]:border-primary/40 data-[state=open]:bg-white/[0.12]',
+            'h-10 gap-1.5 rounded-full border-border bg-white/[0.08] px-3 text-foreground hover:border-white/20 hover:bg-white/[0.12] data-[state=open]:border-primary/40 data-[state=open]:bg-white/[0.12]',
             className,
           )}
           aria-label={`Language: ${current.label}`}

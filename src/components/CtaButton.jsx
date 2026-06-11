@@ -18,7 +18,7 @@ export function CtaLink({
       size={size === 'sm' ? 'sm' : 'default'}
       className={cn(
         pillClass,
-        size === 'sm' ? 'h-9 px-5 text-sm' : 'h-auto px-7 py-3.5 text-[15px]',
+        size === 'sm' ? 'h-10 px-6 text-sm' : 'h-auto px-7 py-3.5 text-[15px]',
         className,
       )}
     >
@@ -40,7 +40,7 @@ export function CtaButton({
       size={size === 'sm' ? 'sm' : 'default'}
       className={cn(
         pillClass,
-        size === 'sm' ? 'h-9 px-5 text-sm' : 'h-auto px-7 py-3.5 text-[15px]',
+        size === 'sm' ? 'h-10 px-6 text-sm' : 'h-auto px-7 py-3.5 text-[15px]',
         className,
       )}
       {...props}

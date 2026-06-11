@@ -53,44 +53,40 @@ export default function Header({ overHero = false }) {
           scrolled && 'border-b border-border bg-black/95 py-3.5 backdrop-blur-xl',
         )}
       >
-        <div
-          className={cn(
-            container,
-            'flex items-center',
-            'min-[901px]:grid min-[901px]:grid-cols-[1fr_auto_1fr] min-[901px]:items-center',
-          )}
-        >
-          <a href="/" className="flex shrink-0 items-center gap-2 justify-self-start">
+        <div className={cn(container, 'flex items-center gap-6')}>
+          <a href="/" className="flex shrink-0 items-center gap-2">
             <Logo />
           </a>
 
           <nav
-            className="hidden items-center justify-center gap-9 min-[901px]:flex"
+            className="hidden flex-1 items-center justify-center gap-8 min-[901px]:flex xl:gap-10"
             aria-label="Main navigation"
           >
             {desktopLinkKeys.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="whitespace-nowrap text-base font-semibold text-white/85 transition-colors hover:text-foreground"
+                className="whitespace-nowrap text-[15px] font-semibold text-white/80 transition-colors hover:text-primary"
               >
                 {t(`nav.${link.key}`)}
               </a>
             ))}
           </nav>
 
-          <div className="ml-auto flex shrink-0 items-center gap-2.5 min-[901px]:ml-0 min-[901px]:justify-self-end">
-            <CtaLink href="#contact" size="sm" className="hidden min-[901px]:inline-flex">
-              {t('common.signUp')}
-            </CtaLink>
-            <CtaLink href="#contact" variant="outline" size="sm" className="hidden min-[901px]:inline-flex">
-              {t('common.login')}
-            </CtaLink>
-            <LanguageSwitcher className="hidden min-[901px]:inline-flex" />
+          <div className="ml-auto flex shrink-0 items-center min-[901px]:ml-0">
+            <div className="hidden items-center gap-6 border-l border-white/10 pl-8 min-[901px]:flex">
+              <CtaLink href="#contact" size="sm">
+                {t('common.signUp')}
+              </CtaLink>
+              <CtaLink href="#contact" variant="outline" size="sm">
+                {t('common.login')}
+              </CtaLink>
+              <LanguageSwitcher />
+            </div>
             <Button
               variant="outline"
               size="sm"
-              className="hidden rounded-full border-transparent bg-white/12 text-sm font-semibold text-foreground backdrop-blur-md hover:bg-white/20 max-[900px]:inline-flex"
+              className="rounded-full border-transparent bg-white/12 text-sm font-semibold text-foreground backdrop-blur-md hover:bg-white/20 max-[900px]:inline-flex min-[901px]:hidden"
               onClick={() => setMenuOpen(true)}
               aria-label={t('nav.menu')}
             >
