@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 const gradientHeader =
   'bg-[radial-gradient(ellipse_at_30%_50%,rgba(242,202,80,0.14)_0%,transparent_70%),linear-gradient(180deg,#141414_0%,#0a0a0a_100%)]'
 
-const primaryMarkIds = new Set(['foxy', 'cupe'])
+const primaryMarkIds = new Set(['foxy', 'cupe', 'cliq', 'himbo'])
 
 const showcaseThemes = {
   foxy: 'from-[#3d3520] to-[#221e12]',
