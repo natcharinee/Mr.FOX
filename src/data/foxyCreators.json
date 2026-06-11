@@ -1,0 +1,105 @@
+{
+  "source": "https://www.foxy.club/MenuPublic",
+  "fetchedAt": "2026-06-11T07:23:44.797Z",
+  "creators": [
+    {
+      "id": "foxy-3d0f5fad-278d-469a-bf94-54c9b6ec0426",
+      "name": "FuengFah",
+      "role": "FOXY Creator",
+      "platform": "FOXY",
+      "image": "https://d2rlibv51pwtjl.cloudfront.net/3d0f5fad-278d-469a-bf94-54c9b6ec0426/7b36c48d-720b-4798-974f-524607273604.jpeg?tr=w-800,h-1000,cm-pad_resize",
+      "profile": "https://d2rlibv51pwtjl.cloudfront.net/3d0f5fad-278d-469a-bf94-54c9b6ec0426/7b36c48d-720b-4798-974f-524607273604.jpeg?tr=w-250",
+      "feedImage": "https://d2rlibv51pwtjl.cloudfront.net/feed/2026/6/9/dd8c9412-53ff-40e2-9c62-39de0b286a4f.jpeg?tr=w-1200"
+    },
+    {
+      "id": "foxy-27ebcbec-4a14-42d1-8743-2e35b82ef356",
+      "name": "KARAKADE",
+      "role": "FOXY Creator",
+      "platform": "FOXY",
+      "image": "https://d2rlibv51pwtjl.cloudfront.net/27ebcbec-4a14-42d1-8743-2e35b82ef356/a8d45877-83e8-4d57-9b26-3e0232969d05.jpg?tr=w-800,h-1000,cm-pad_resize",
+      "profile": "https://d2rlibv51pwtjl.cloudfront.net/27ebcbec-4a14-42d1-8743-2e35b82ef356/a8d45877-83e8-4d57-9b26-3e0232969d05.jpg?tr=w-250",
+      "feedImage": "https://d2rlibv51pwtjl.cloudfront.net/feed/2026/6/10/b5c01503-aa55-4f93-9495-6025dc53b86e.jpeg?tr=w-1200"
+    },
+    {
+      "id": "foxy-6c098b51-cf74-4927-aa97-8e55e0714ad3",
+      "name": "Chaly",
+      "role": "FOXY Creator",
+      "platform": "FOXY",
+      "image": "https://d2rlibv51pwtjl.cloudfront.net/6c098b51-cf74-4927-aa97-8e55e0714ad3/10030230-a7dd-4b2c-9b14-44a02a5b7c8d.jpeg?tr=w-800,h-1000,cm-pad_resize",
+      "profile": "https://d2rlibv51pwtjl.cloudfront.net/6c098b51-cf74-4927-aa97-8e55e0714ad3/10030230-a7dd-4b2c-9b14-44a02a5b7c8d.jpeg?tr=w-250",
+      "feedImage": "https://d2rlibv51pwtjl.cloudfront.net/feed/2026/6/9/43c19f9c-1e1d-4eb5-9776-1e9978f70acc.jpeg?tr=w-1200"
+    },
+    {
+      "id": "foxy-56b57174-b480-41fe-a4f3-8d20549ccd06",
+      "name": "bookku",
+      "role": "FOXY Creator",
+      "platform": "FOXY",
+      "image": "https://d2rlibv51pwtjl.cloudfront.net/56b57174-b480-41fe-a4f3-8d20549ccd06/4bcd4b41-5dbf-432e-807d-c2918c7772b9.jpeg?tr=w-800,h-1000,cm-pad_resize",
+      "profile": "https://d2rlibv51pwtjl.cloudfront.net/56b57174-b480-41fe-a4f3-8d20549ccd06/4bcd4b41-5dbf-432e-807d-c2918c7772b9.jpeg?tr=w-250",
+      "feedImage": "https://d2rlibv51pwtjl.cloudfront.net/feed/2026/6/9/2001d017-d5a6-492e-8564-88ab11a3e856.jpeg?tr=w-1200"
+    },
+    {
+      "id": "foxy-96b5d482-b73c-4160-9a58-6c3a248509a0",
+      "name": "Mmaayy'",
+      "role": "FOXY Creator",
+      "platform": "FOXY",
+      "image": "https://d2rlibv51pwtjl.cloudfront.net/96b5d482-b73c-4160-9a58-6c3a248509a0/2f5681a9-2d07-42d4-82be-6f25f5399deb.jpg?tr=w-800,h-1000,cm-pad_resize",
+      "profile": "https://d2rlibv51pwtjl.cloudfront.net/96b5d482-b73c-4160-9a58-6c3a248509a0/2f5681a9-2d07-42d4-82be-6f25f5399deb.jpg?tr=w-250",
+      "feedImage": "https://d2rlibv51pwtjl.cloudfront.net/feed/2026/6/9/bcb0cda9-e2b6-43b9-9725-8737bf72944c.jpg?tr=w-1200"
+    },
+    {
+      "id": "foxy-26f38d3f-7798-4e67-8056-a9b00f14c0ba",
+      "name": "ploytigerstam",
+      "role": "FOXY Creator",
+      "platform": "FOXY",
+      "image": "https://d2rlibv51pwtjl.cloudfront.net/26f38d3f-7798-4e67-8056-a9b00f14c0ba/9f2dc566-4cf6-41af-a8ce-30466e29fd8d.jpeg?tr=w-800,h-1000,cm-pad_resize",
+      "profile": "https://d2rlibv51pwtjl.cloudfront.net/26f38d3f-7798-4e67-8056-a9b00f14c0ba/9f2dc566-4cf6-41af-a8ce-30466e29fd8d.jpeg?tr=w-250",
+      "feedImage": "https://d2rlibv51pwtjl.cloudfront.net/feed/2026/6/8/2a354d2c-a281-4ac7-b916-56781da45b13.jpeg?tr=w-1200"
+    },
+    {
+      "id": "foxy-2c60dbed-f895-43fe-922b-1de4f9c4eab9",
+      "name": "MickeyTitiporn",
+      "role": "FOXY Creator",
+      "platform": "FOXY",
+      "image": "https://d2rlibv51pwtjl.cloudfront.net/2c60dbed-f895-43fe-922b-1de4f9c4eab9/12fd5f7f-ad34-444b-b14c-d1e05fd653a8.jpg?tr=w-800,h-1000,cm-pad_resize",
+      "profile": "https://d2rlibv51pwtjl.cloudfront.net/2c60dbed-f895-43fe-922b-1de4f9c4eab9/12fd5f7f-ad34-444b-b14c-d1e05fd653a8.jpg?tr=w-250",
+      "feedImage": "https://d2rlibv51pwtjl.cloudfront.net/feed/2026/6/8/c011acf9-c0d3-4f35-b523-4d55b334dd1d.jpeg?tr=w-1200"
+    },
+    {
+      "id": "foxy-5d246331-fd91-4ffd-bb69-709f1b605d92",
+      "name": "Anlita",
+      "role": "FOXY Creator",
+      "platform": "FOXY",
+      "image": "https://d2rlibv51pwtjl.cloudfront.net/5d246331-fd91-4ffd-bb69-709f1b605d92/1caf271b-e1eb-493c-87ff-1f9c7d4de99a.jpg?tr=w-800,h-1000,cm-pad_resize",
+      "profile": "https://d2rlibv51pwtjl.cloudfront.net/5d246331-fd91-4ffd-bb69-709f1b605d92/1caf271b-e1eb-493c-87ff-1f9c7d4de99a.jpg?tr=w-250",
+      "feedImage": "https://d2rlibv51pwtjl.cloudfront.net/feed/2026/6/5/83abde3e-ab4e-405b-a054-709da065136d.jpg?tr=w-1200"
+    },
+    {
+      "id": "foxy-9e33bc48-16ea-4bd1-b141-47246d67c223",
+      "name": "Megus",
+      "role": "FOXY Creator",
+      "platform": "FOXY",
+      "image": "https://d2rlibv51pwtjl.cloudfront.net/9e33bc48-16ea-4bd1-b141-47246d67c223/8c3a0b64-5cde-4435-918c-68245f83aef0.jpg?tr=w-800,h-1000,cm-pad_resize",
+      "profile": "https://d2rlibv51pwtjl.cloudfront.net/9e33bc48-16ea-4bd1-b141-47246d67c223/8c3a0b64-5cde-4435-918c-68245f83aef0.jpg?tr=w-250",
+      "feedImage": "https://d2rlibv51pwtjl.cloudfront.net/feed/2026/5/31/9ba3893c-c049-4035-b5bf-25f5feecdc4d.jpeg?tr=w-1200"
+    },
+    {
+      "id": "foxy-46873665-71d4-4e1f-8ecc-f1af1c22dadb",
+      "name": "เชอลินแปลว่าที่รัก ♡",
+      "role": "FOXY Creator",
+      "platform": "FOXY",
+      "image": "https://d2rlibv51pwtjl.cloudfront.net/46873665-71d4-4e1f-8ecc-f1af1c22dadb/084b9f67-b32f-42df-bedf-a3fe85409a95.jpeg?tr=w-800,h-1000,cm-pad_resize",
+      "profile": "https://d2rlibv51pwtjl.cloudfront.net/46873665-71d4-4e1f-8ecc-f1af1c22dadb/084b9f67-b32f-42df-bedf-a3fe85409a95.jpeg?tr=w-250",
+      "feedImage": "https://d2rlibv51pwtjl.cloudfront.net/feed/2026/5/24/82e1261b-400a-45f6-a5d5-45eba40d7333.jpeg?tr=w-1200"
+    },
+    {
+      "id": "foxy-84774ee5-f88e-4107-8c83-9cc21a2b8af5",
+      "name": "Luck's",
+      "role": "FOXY Creator",
+      "platform": "FOXY",
+      "image": "https://d2rlibv51pwtjl.cloudfront.net/84774ee5-f88e-4107-8c83-9cc21a2b8af5/28344dc5-e6e1-4684-864d-fab111889cab.jpg?tr=w-800,h-1000,cm-pad_resize",
+      "profile": "https://d2rlibv51pwtjl.cloudfront.net/84774ee5-f88e-4107-8c83-9cc21a2b8af5/28344dc5-e6e1-4684-864d-fab111889cab.jpg?tr=w-250",
+      "feedImage": "https://d2rlibv51pwtjl.cloudfront.net/feed/2026/5/23/799889be-acfb-4535-afd7-5cb8a0b6d67a.jpg?tr=w-1200"
+    }
+  ]
+}

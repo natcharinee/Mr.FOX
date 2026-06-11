@@ -13,4 +13,13 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  server: {
+    proxy: {
+      '/api/foxy': {
+        target: 'https://www.foxy.club',
+        changeOrigin: true,
+        rewrite: (requestPath) => requestPath.replace(/^\/api\/foxy/, ''),
+      },
+    },
+  },
 })

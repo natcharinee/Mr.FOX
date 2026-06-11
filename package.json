@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "fetch:creators": "node scripts/fetch-foxy-creators.mjs",
     "build": "vite build",
     "preview": "vite preview"
   },

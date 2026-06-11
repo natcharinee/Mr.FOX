@@ -1,4 +1,5 @@
-import { HERO_ASPECT_RATIO, successStories } from '../data/content'
+import { HERO_ASPECT_RATIO } from '../data/content'
+import { useFoxyCreators } from '../hooks/useFoxyCreators'
 import { useI18n } from '../i18n/I18nContext'
 import { CtaLink } from './CtaButton'
 import CoverFlowCarousel from './CoverFlowCarousel'
@@ -7,6 +8,7 @@ import { cn } from '@/lib/utils'
 
 export default function SuccessStories() {
   const { t } = useI18n()
+  const { creators } = useFoxyCreators()
 
   return (
     <section className={cn(section, 'overflow-x-clip')} id="stories">
@@ -16,12 +18,12 @@ export default function SuccessStories() {
 
       <div className="mt-12">
         <CoverFlowCarousel
-          items={successStories}
+          items={creators}
           getKey={(story) => story.id}
-          stageHeight="min(400px, 78vw)"
+          stageHeight="min(460px, 84vw)"
           stageClassName="max-w-[1400px]"
-          slideClassName="w-[min(300px,58vw)]"
-          spacing={248}
+          slideClassName="w-[min(360px,66vw)]"
+          spacing={272}
           wrap
           maxVisible={2}
           renderSlide={({ item: story, isActive, onSelect }) => (
@@ -37,7 +39,7 @@ export default function SuccessStories() {
             >
               <div
                 className={cn(
-                  'w-full overflow-hidden rounded-2xl bg-[#0a0a0a] shadow-[0_32px_64px_-24px_rgba(0,0,0,0.9)]',
+                  'w-full overflow-hidden bg-[#0a0a0a] shadow-[0_32px_64px_-24px_rgba(0,0,0,0.9)]',
                   isActive && 'ring-1 ring-white/15',
                 )}
                 style={{ aspectRatio: HERO_ASPECT_RATIO }}
@@ -46,7 +48,7 @@ export default function SuccessStories() {
                   <img
                     src={story.image}
                     alt=""
-                    className="size-full object-contain object-center"
+                    className="size-full object-cover object-[50%_22%]"
                     draggable="false"
                     loading="eager"
                   />
