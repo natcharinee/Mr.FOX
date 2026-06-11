@@ -66,6 +66,14 @@ export default {
     pill1: 'Creator Economy',
     pill2: '20+ แพลตฟอร์ม',
     pill3: 'One Account. Every Experience.',
+    phoneHub: 'Creator Hub',
+    phoneStatPlatforms: 'แพลตฟอร์ม',
+    phoneStatCreators: 'ครีเอเตอร์',
+    phonePlatforms: 'เครือข่ายแพลตฟอร์ม',
+    phoneEarnings: 'รายได้วันนี้',
+    phoneChat1: 'สวัสดีค่ะ มีคอนเทนต์ใหม่แล้ว!',
+    phoneChat2: 'เยี่ยมเลย อัปโหลดให้แล้วครับ',
+    phoneChat3: 'Mr.FOX ช่วยกระจายทุกแพลตฟอร์มเลย',
   },
   brandBanner: {
     intro: 'Mr.FOX คือแพลตฟอร์มที่ขับเคลื่อนเศรษฐกิจ',
@@ -82,6 +90,8 @@ export default {
     subtitleLine1: 'ทุกกลุ่ม ทุกเป้าหมาย — Mr.FOX เป็นผู้นำที่ขับเคลื่อน',
     subtitleLine2: 'แพลตฟอร์มสำหรับครีเอเตอร์',
     tagline: 'One Network. Unlimited Opportunities.',
+    meta: 'เครือข่าย 20+ แพลตฟอร์ม',
+    connected: 'ชมเว็บไซต์',
     viewAll: 'ดูแพลตฟอร์มทั้งหมด',
   },
   featuresPage: {
@@ -172,8 +182,8 @@ export default {
     payment: { title: 'โครงสร้างการชำระเงิน', desc: 'จ่ายเงินรวดเร็วและปลอดภัยในหลายตลาด' },
   },
   payoutCta: {
-    line1: 'สร้างรายได้ให้ครีเอเตอร์แล้ว',
-    line1Suffix: 'กว่า',
+    line1: 'สร้างรายได้ให้ครีเอเตอร์แล้วกว่า',
+    line1Suffix: '',
     line2: '10,000,000 บาท',
   },
   promo: {

@@ -66,6 +66,14 @@ export default {
     pill1: 'Creator Economy',
     pill2: '20+ Platforms',
     pill3: 'One Account. Every Experience.',
+    phoneHub: 'Creator Hub',
+    phoneStatPlatforms: 'Platforms',
+    phoneStatCreators: 'Creators',
+    phonePlatforms: 'Platform Network',
+    phoneEarnings: "Today's Earnings",
+    phoneChat1: 'Hi! New content is ready!',
+    phoneChat2: 'Awesome — already uploaded!',
+    phoneChat3: 'Mr.FOX distributes across every platform',
   },
   brandBanner: {
     intro: 'Mr.FOX is a Creator Super App that connects creators and fans through content, communication, community, and commerce.',
@@ -82,6 +90,8 @@ export default {
     subtitleLine1: 'Every niche, every audience — Mr.FOX powers platforms',
     subtitleLine2: 'built for creators who lead their category.',
     tagline: 'One Network. Unlimited Opportunities.',
+    meta: '20+ PLATFORMS',
+    connected: 'Visit Website',
     viewAll: 'View all platforms',
   },
   featuresPage: {

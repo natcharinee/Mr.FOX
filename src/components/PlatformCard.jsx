@@ -1,3 +1,4 @@
+import { Zap } from 'lucide-react'
 import { useI18n } from '../i18n/I18nContext'
 import PlatformMark from './PlatformMark'
 import { goldLink } from '@/lib/layout'
@@ -29,6 +30,45 @@ export default function PlatformCard({
   variant = 'default',
 }) {
   const { t } = useI18n()
+
+  if (variant === 'ecosystem') {
+    const isFoxy = platform.id === 'foxy'
+
+    return (
+      <article
+        className={cn(
+          'group flex min-h-[220px] flex-col rounded-2xl bg-[#161616] p-6 transition-all duration-200',
+          'border border-transparent hover:border-white/15',
+        )}
+      >
+        <div
+          className={cn(
+            'mb-5 flex size-11 items-center justify-center overflow-hidden rounded-xl',
+            isFoxy ? 'bg-primary' : 'border border-white/8 bg-[#222222]',
+          )}
+        >
+          <span
+            className={cn(
+              'text-base font-extrabold leading-none',
+              isFoxy ? 'text-black' : 'text-white/90',
+            )}
+          >
+            {platform.name.charAt(0)}
+          </span>
+        </div>
+        <h3 className="text-lg font-bold tracking-tight text-white">{platform.name}</h3>
+        <p className="mt-2 line-clamp-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+          {t(`platformsMarquee.${platform.id}`)}
+        </p>
+        <div className="mt-6 flex items-center justify-between">
+          <span className="text-[11px] font-semibold tracking-[0.14em] text-[#5eead4]">
+            {t('ecosystem.connected')}
+          </span>
+          <Zap className="size-4 fill-[#5eead4] text-[#5eead4]" strokeWidth={0} />
+        </div>
+      </article>
+    )
+  }
 
   if (variant === 'showcase') {
     const theme = showcaseThemes[platform.id] ?? 'from-[#1a1a2e] to-[#0f3460]'

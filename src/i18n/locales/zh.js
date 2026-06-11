@@ -66,6 +66,14 @@ export default {
     pill1: '创作者经济',
     pill2: '20+ 平台',
     pill3: 'One Account. Every Experience.',
+    phoneHub: '创作者中心',
+    phoneStatPlatforms: '平台',
+    phoneStatCreators: '创作者',
+    phonePlatforms: '平台网络',
+    phoneEarnings: '今日收入',
+    phoneChat1: '你好！新内容已准备好！',
+    phoneChat2: '太棒了，已经上传！',
+    phoneChat3: 'Mr.FOX 帮你分发到每个平台',
   },
   brandBanner: {
     intro: 'Mr.FOX 是引领未来创作者经济的平台',
@@ -82,6 +90,8 @@ export default {
     subtitleLine1: '每个细分领域，每个受众 — Mr.FOX',
     subtitleLine2: '为引领行业的创作者打造平台',
     tagline: 'One Network. Unlimited Opportunities.',
+    meta: '20+ 平台网络',
+    connected: '访问网站',
     viewAll: '查看全部平台',
   },
   featuresPage: {

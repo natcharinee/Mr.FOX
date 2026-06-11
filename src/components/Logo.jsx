@@ -7,7 +7,7 @@ export default function Logo({ className = '', variant = 'compact' }) {
     <div
       className={cn(
         'inline-flex items-center',
-        isBanner ? 'w-full justify-center' : 'gap-3',
+        isBanner ? 'w-full justify-center' : 'gap-2',
         className,
       )}
       role="img"
@@ -17,7 +17,7 @@ export default function Logo({ className = '', variant = 'compact' }) {
         <img
           src="/images/fox-mark.png"
           alt=""
-          className="h-10 w-auto shrink-0 rounded"
+          className="h-10 w-10 shrink-0 rounded object-contain"
           draggable="false"
         />
       )}
@@ -25,20 +25,20 @@ export default function Logo({ className = '', variant = 'compact' }) {
         className={cn(
           isBanner
             ? 'block h-auto w-full max-w-none'
-            : 'h-11 w-auto shrink-0 -ml-0.5',
+            : 'h-10 w-auto shrink-0',
         )}
-        viewBox={isBanner ? '0 10 388 96' : '0 0 430 147'}
+        viewBox={isBanner ? '0 10 388 96' : '0 0 138 40'}
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
-        preserveAspectRatio={isBanner ? 'xMidYMid meet' : undefined}
+        preserveAspectRatio={isBanner ? 'xMidYMid meet' : 'xMinYMid meet'}
       >
         <text
           x={isBanner ? '194' : '0'}
-          y={isBanner ? '96' : '112'}
+          y={isBanner ? '96' : '30'}
           textAnchor={isBanner ? 'middle' : 'start'}
           fontFamily="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
           fontWeight="900"
-          fontSize="98"
+          fontSize={isBanner ? '98' : '30'}
           fill="#F2CA50"
           letterSpacing="-0.04em"
         >

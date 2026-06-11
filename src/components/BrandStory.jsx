@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import { useI18n } from '../i18n/I18nContext'
+import PhoneMockup from './PhoneMockup'
 import { container } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
@@ -29,12 +30,11 @@ export default function BrandStory() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_35%_at_100%_100%,rgba(242,202,80,0.07),transparent_55%)]" />
 
       <div className={cn(container, 'relative')}>
-        <div className="mx-auto max-w-[860px]">
-          <p className="mb-8 text-center text-[13px] font-bold uppercase tracking-[0.22em] text-primary">
-            {t('brandStory.label')}
-          </p>
+        <p className="mb-8 text-center text-[13px] font-bold uppercase tracking-[0.22em] text-primary">
+          {t('brandStory.label')}
+        </p>
 
-          <div className="relative overflow-hidden rounded-[28px] border border-primary/20 bg-gradient-to-b from-white/[0.07] to-white/[0.02] px-[clamp(24px,5vw,56px)] py-[clamp(32px,5vw,52px)] shadow-[0_0_100px_rgba(242,202,80,0.1)]">
+        <div className="relative w-full overflow-hidden rounded-[28px] border border-primary/20 bg-gradient-to-b from-white/[0.07] to-white/[0.02] px-[clamp(24px,5vw,56px)] py-[clamp(32px,5vw,52px)] shadow-[0_0_100px_rgba(242,202,80,0.1)]">
             <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
             <div className="pointer-events-none absolute -right-16 -top-16 size-48 rounded-full bg-primary/10 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-20 -left-16 size-56 rounded-full bg-primary/5 blur-3xl" />
@@ -82,6 +82,16 @@ export default function BrandStory() {
                 </span>
               ))}
             </div>
+          </div>
+
+        <div className="relative mt-10 overflow-hidden rounded-[28px] border border-primary/12 bg-gradient-to-b from-primary/[0.07] via-white/[0.02] to-transparent px-6 py-12 sm:px-10 sm:py-14">
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_100%,rgba(242,202,80,0.14),transparent_65%)]" />
+          <div className="pointer-events-none absolute inset-0 opacity-40 bg-[radial-gradient(circle,rgba(242,202,80,0.07)_1px,transparent_1px)] bg-[size:28px_28px]" />
+
+          <div className="relative flex justify-center">
+            <div className="pointer-events-none absolute left-1/2 top-1/2 size-[min(90vw,360px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/14 blur-3xl" />
+            <PhoneMockup />
           </div>
         </div>
       </div>

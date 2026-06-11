@@ -22,15 +22,15 @@ export default function PayoutCta() {
         aria-hidden="true"
       />
       <div className={cn(container, 'relative')}>
-        <div className="mx-auto max-w-[720px] text-center">
-          <h2 className="text-[clamp(32px,5vw,56px)] font-extrabold leading-[1.15] tracking-tight">
-            <span>
+        <div className="mx-auto max-w-[900px] text-center">
+          <h2 className="text-[clamp(22px,4.5vw,56px)] font-extrabold leading-[1.15] tracking-tight">
+            <span className="inline-block whitespace-nowrap">
               {t('payoutCta.line1')}
               {t('payoutCta.line1Suffix') && (
-                <span className="whitespace-nowrap">
+                <>
                   {'\u00A0'}
                   {t('payoutCta.line1Suffix')}
-                </span>
+                </>
               )}
             </span>
             <br />
