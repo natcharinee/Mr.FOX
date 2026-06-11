@@ -1,19 +1,34 @@
+import { useMemo } from 'react'
 import { motion } from 'motion/react'
-import { testimonials as testimonialItems } from '../data/testimonials'
 import { useI18n } from '../i18n/I18nContext'
 import { TestimonialsColumn } from './ui/testimonials-columns-1'
 import { container } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
-export default function Testimonials() {
+const QUOTE_KEYS = ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9']
+const TESTIMONIAL_COUNT = 9
+
+function buildTestimonials(creators, t) {
+  if (!creators.length) return []
+
+  return Array.from({ length: TESTIMONIAL_COUNT }, (_, index) => {
+    const creator = creators[index % creators.length]
+    return {
+      id: `${creator.id}-${index}`,
+      image: creator.profile || creator.image,
+      name: creator.name,
+      role: creator.role,
+      text: t(`testimonials.${QUOTE_KEYS[index % QUOTE_KEYS.length]}`),
+    }
+  })
+}
+
+export default function Testimonials({ creators = [] }) {
   const { t } = useI18n()
 
-  const testimonials = testimonialItems.map((item) => ({
-    image: item.image,
-    text: t(`testimonials.${item.textKey}`),
-    name: t(`testimonials.${item.nameKey}`),
-    role: t(`testimonials.${item.roleKey}`),
-  }))
+  const testimonials = useMemo(() => buildTestimonials(creators, t), [creators, t])
+
+  if (!testimonials.length) return null
 
   const firstColumn = testimonials.slice(0, 3)
   const secondColumn = testimonials.slice(3, 6)

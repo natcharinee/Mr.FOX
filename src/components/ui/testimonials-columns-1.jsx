@@ -17,9 +17,9 @@ export function TestimonialsColumn({ className, testimonials, duration = 10 }) {
       >
         {[0, 1].map((pass) => (
           <Fragment key={pass}>
-            {testimonials.map(({ text, image, name, role }) => (
+            {testimonials.map(({ id, text, image, name, role }) => (
               <div
-                key={`${pass}-${name}`}
+                key={`${pass}-${id ?? name}`}
                 className="w-full max-w-xs rounded-2xl border border-white/10 bg-[#161616] p-6 shadow-[0_20px_50px_-24px_rgba(242,202,80,0.12)]"
               >
                 <p className="text-sm leading-relaxed text-muted-foreground">{text}</p>

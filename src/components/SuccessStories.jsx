@@ -108,7 +108,7 @@ export default function SuccessStories() {
         />
       </div>
 
-      <Testimonials />
+      <Testimonials creators={creators} />
 
       <div className="relative mt-10 overflow-hidden py-[clamp(40px,6vw,64px)]">
         <div
