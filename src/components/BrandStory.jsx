@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { useI18n } from '../i18n/I18nContext'
 import PhoneMockup from './PhoneMockup'
+import { PaperShaderBackground } from '@/components/ui/paper-shader-background'
 import { container } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
@@ -30,7 +31,7 @@ export default function BrandStory() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_45%_35%_at_100%_100%,rgba(242,202,80,0.07),transparent_55%)]" />
 
       <div className={cn(container, 'relative')}>
-        <p className="mb-8 text-center text-[13px] font-bold uppercase tracking-[0.22em] text-primary">
+        <p className="mb-8 text-center text-[clamp(16px,2.2vw,20px)] font-bold uppercase tracking-[0.22em] text-primary">
           {t('brandStory.label')}
         </p>
 
@@ -68,6 +69,12 @@ export default function BrandStory() {
               <div className="relative mt-8 rounded-2xl border border-primary/20 bg-primary/[0.07] px-6 py-5">
                 <p className="text-center text-[clamp(15px,1.9vw,17px)] font-semibold leading-[1.8] text-foreground/95">
                   <HighlightBrand text={t('brandBanner.outro')} />
+                  {t('brandBanner.outroLine2') && (
+                    <>
+                      <br />
+                      {t('brandBanner.outroLine2')}
+                    </>
+                  )}
                 </p>
               </div>
             )}
@@ -84,13 +91,10 @@ export default function BrandStory() {
             </div>
           </div>
 
-        <div className="relative mt-10 overflow-hidden rounded-[28px] border border-primary/12 bg-gradient-to-b from-primary/[0.07] via-white/[0.02] to-transparent px-6 py-12 sm:px-10 sm:py-14">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_100%,rgba(242,202,80,0.14),transparent_65%)]" />
-          <div className="pointer-events-none absolute inset-0 opacity-40 bg-[radial-gradient(circle,rgba(242,202,80,0.07)_1px,transparent_1px)] bg-[size:28px_28px]" />
-
-          <div className="relative flex justify-center">
-            <div className="pointer-events-none absolute left-1/2 top-1/2 size-[min(90vw,360px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/14 blur-3xl" />
+        <div className="relative mt-10 overflow-hidden rounded-[28px] border border-primary/20 px-6 py-12 shadow-[0_0_100px_rgba(242,202,80,0.1)] sm:px-10 sm:py-14">
+          <PaperShaderBackground />
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
+          <div className="relative z-10 flex justify-center">
             <PhoneMockup />
           </div>
         </div>

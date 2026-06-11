@@ -71,6 +71,7 @@ export default {
     phoneStatCreators: '创作者',
     phonePlatforms: '平台网络',
     phoneEarnings: '今日收入',
+    phoneEarningsTotal: '合计',
     phoneChat1: '你好！新内容已准备好！',
     phoneChat2: '太棒了，已经上传！',
     phoneChat3: 'Mr.FOX 帮你分发到每个平台',
@@ -80,6 +81,7 @@ export default {
     introLine2: '',
     body: '我们打造一片天地，让创作者尽情创作内容、连接粉丝、构建社群、无限变现——通过互联互通的平台网络与服务，汇聚于同一生态系统。',
     outro: '不止是一款应用，Mr.FOX 更是助力创作者成长、塑造品牌、将热爱转化为可持续事业的基础设施。',
+    outroLine2: '',
   },
   ecosystem: {
     label: '生态系统',

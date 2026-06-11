@@ -19,7 +19,7 @@ const desktopLinkKeys = [
 const mobileLinkKeys = desktopLinkKeys
 
 export default function Header({ overHero = false }) {
-  const { t } = useI18n()
+  const { t, tNav } = useI18n()
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -57,7 +57,7 @@ export default function Header({ overHero = false }) {
                 href={link.href}
                 className="whitespace-nowrap text-[15px] font-semibold text-white/80 transition-colors hover:text-primary"
               >
-                {t(`nav.${link.key}`)}
+                {tNav(link.key)}
               </a>
             ))}
           </nav>
@@ -87,9 +87,9 @@ export default function Header({ overHero = false }) {
               size="sm"
               className="rounded-full border-transparent bg-white/12 text-sm font-semibold text-foreground backdrop-blur-md hover:bg-white/20 max-[900px]:inline-flex min-[901px]:hidden"
               onClick={() => setMenuOpen(true)}
-              aria-label={t('nav.menu')}
+              aria-label={tNav('menu')}
             >
-              {t('nav.menu')}
+              {tNav('menu')}
             </Button>
           </div>
         </div>
@@ -111,9 +111,9 @@ export default function Header({ overHero = false }) {
               size="sm"
               className="rounded-full border-transparent bg-white/12 text-sm font-semibold backdrop-blur-md hover:bg-white/20"
               onClick={() => setMenuOpen(false)}
-              aria-label={t('nav.close')}
+              aria-label={tNav('close')}
             >
-              {t('nav.close')}
+              {tNav('close')}
             </Button>
             <LanguageSwitcher inOverlay />
           </div>
@@ -126,7 +126,7 @@ export default function Header({ overHero = false }) {
               className="border-b border-white/5 py-3 text-[clamp(24px,4vw,32px)] font-semibold leading-tight tracking-tight transition-colors last:border-b-0 hover:text-primary"
               onClick={() => setMenuOpen(false)}
             >
-              {t(`nav.${link.key}`)}
+              {tNav(link.key)}
             </a>
           ))}
         </nav>

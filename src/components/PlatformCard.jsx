@@ -61,10 +61,10 @@ export default function PlatformCard({
           {t(`platformsMarquee.${platform.id}`)}
         </p>
         <div className="mt-6 flex items-center justify-between">
-          <span className="text-[11px] font-semibold tracking-[0.14em] text-[#5eead4]">
+          <span className="text-[11px] font-semibold tracking-[0.14em] text-primary/90">
             {t('ecosystem.connected')}
           </span>
-          <Zap className="size-4 fill-[#5eead4] text-[#5eead4]" strokeWidth={0} />
+          <Zap className="size-4 fill-primary/90 text-primary/90" strokeWidth={0} />
         </div>
       </article>
     )

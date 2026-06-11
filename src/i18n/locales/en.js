@@ -71,6 +71,7 @@ export default {
     phoneStatCreators: 'Creators',
     phonePlatforms: 'Platform Network',
     phoneEarnings: "Today's Earnings",
+    phoneEarningsTotal: 'Total',
     phoneChat1: 'Hi! New content is ready!',
     phoneChat2: 'Awesome — already uploaded!',
     phoneChat3: 'Mr.FOX distributes across every platform',
@@ -80,6 +81,7 @@ export default {
     introLine2: '',
     body: 'From live streaming and direct messaging to premium memberships and token-powered experiences, Mr.FOX provides everything creators need to build, engage, and monetize their audience in one unified ecosystem.',
     outro: '',
+    outroLine2: '',
   },
   ecosystem: {
     label: 'Ecosystem',

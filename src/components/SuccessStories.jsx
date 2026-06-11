@@ -2,7 +2,7 @@ import { HERO_ASPECT_RATIO } from '../data/content'
 import { useFoxyCreators } from '../hooks/useFoxyCreators'
 import { useI18n } from '../i18n/I18nContext'
 import { CtaLink } from './CtaButton'
-import CoverFlowCarousel from './CoverFlowCarousel'
+import PanoramaCarousel from './PanoramaCarousel'
 import { container, section, sectionTitle } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
@@ -17,15 +17,14 @@ export default function SuccessStories() {
       </div>
 
       <div className="mt-12">
-        <CoverFlowCarousel
+        <PanoramaCarousel
           items={creators}
           getKey={(story) => story.id}
           stageHeight="min(460px, 84vw)"
-          stageClassName="max-w-[1400px]"
-          slideClassName="w-[min(360px,66vw)]"
-          spacing={272}
+          slideClassName="w-[min(280px,54vw)]"
+          spacing={280}
           wrap
-          maxVisible={2}
+          maxVisible={3}
           renderSlide={({ item: story, isActive, onSelect }) => (
             <button
               type="button"

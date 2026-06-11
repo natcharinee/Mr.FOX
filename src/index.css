@@ -187,7 +187,7 @@
   }
 
   html[lang="th"] body {
-    font-family: 'Sarabun', 'Prompt', var(--font-sans);
+    font-family: 'Kanit', var(--font-sans);
   }
 
   html[lang="zh-Hans"] body {
