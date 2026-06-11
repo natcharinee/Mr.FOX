@@ -320,10 +320,16 @@ export default {
     q4: '如何开始？',
     a4: '点击"成为创作者"并填写申请。我们的团队将在 48 小时内审核并指导您完成入驻',
   },
+  legalPage: {
+    updated: '最后更新：{{date}}',
+    documents: '文档',
+    questions: '对此政策有疑问？',
+    contact: '联系我们的团队',
+  },
   footer: {
     tagline: '创作者生态公司',
     phone: '02 957 5771',
-    address: '1323/1 Srivara Road (Lat Phrao 94) Town in Town PhlabPhla Wangthonglang',
+    address: '1323/1 Srivara Road (Lat Phrao 94) Town in Town PhlabPhla Wangthonglang Bangkok 10310',
     company: '公司',
     ecosystem: '生态系统',
     resources: '资源',

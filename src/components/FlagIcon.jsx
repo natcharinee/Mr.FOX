@@ -1,3 +1,5 @@
+import { cn } from '@/lib/utils'
+
 const flags = {
   th: (
     <svg viewBox="0 0 24 16" aria-hidden="true">
@@ -36,7 +38,7 @@ const flags = {
 
 export default function FlagIcon({ code, className = '' }) {
   return (
-    <span className={`flag-icon ${className}`}>
+    <span className={cn('inline-flex', className)}>
       {flags[code] ?? flags.en}
     </span>
   )

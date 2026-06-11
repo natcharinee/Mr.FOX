@@ -7,6 +7,7 @@ import FeaturesPage from './pages/FeaturesPage'
 import BlogPage from './pages/BlogPage'
 import SupportPage from './pages/SupportPage'
 import AboutPage from './pages/AboutPage'
+import LegalPage from './pages/LegalPage'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/support" element={<SupportPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/legal/:doc" element={<LegalPage />} />
       </Routes>
     </>
   )

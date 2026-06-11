@@ -65,7 +65,9 @@ export default function Header({ overHero = false }) {
           <div className="ml-auto flex shrink-0 items-center min-[901px]:ml-0">
             <div className="hidden items-center gap-1.5 border-l border-white/10 pl-5 min-[901px]:flex">
               <CtaLink
-                href="/support#contact"
+                href="https://mrfox.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 size="sm"
                 className="h-9 px-4 text-[13px]"
               >

@@ -16,10 +16,12 @@ export default function SuccessStories() {
         <h2 className={cn(sectionTitle, 'text-center')}>{t('stories.title')}</h2>
       </div>
 
-      <div className="mt-12">
+      <div className="relative mx-auto mt-12 max-w-[1400px] overflow-hidden rounded-[28px] border border-primary/15 bg-gradient-to-b from-primary/[0.05] via-white/[0.02] to-transparent px-4 py-10 sm:px-8 sm:py-12">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
         <PanoramaCarousel
           items={creators}
           getKey={(story) => story.id}
+          stageClassName="max-w-none"
           stageHeight="min(460px, 84vw)"
           slideClassName="w-[min(280px,54vw)]"
           spacing={280}
@@ -30,16 +32,21 @@ export default function SuccessStories() {
               type="button"
               onClick={onSelect}
               className={cn(
-                'flex w-full flex-col items-center',
-                isActive ? 'cursor-default' : 'cursor-pointer',
+                'flex w-full flex-col items-center rounded-2xl border p-3 transition-all duration-500',
+                isActive
+                  ? 'cursor-default border-primary/30 bg-primary/[0.06] shadow-[0_20px_50px_-24px_rgba(242,202,80,0.35)]'
+                  : 'cursor-pointer border-white/8 bg-white/[0.02] hover:border-primary/20',
               )}
               aria-current={isActive ? 'true' : undefined}
               aria-label={story.name}
             >
               <div
                 className={cn(
-                  'w-full overflow-hidden bg-[#0a0a0a] shadow-[0_32px_64px_-24px_rgba(0,0,0,0.9)]',
-                  isActive && 'ring-1 ring-white/15',
+                  'w-full overflow-hidden bg-[#0a0a0a]',
+                  'border transition-colors duration-500',
+                  isActive
+                    ? 'border-primary/25 shadow-[inset_0_0_0_1px_rgba(242,202,80,0.08)]'
+                    : 'border-white/10',
                 )}
                 style={{ aspectRatio: HERO_ASPECT_RATIO }}
               >

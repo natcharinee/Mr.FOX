@@ -37,8 +37,12 @@ export default function PayoutCta() {
             <span className="text-primary">{t('payoutCta.line2')}</span>
           </h2>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <CtaLink href="/support#contact">{t('common.becomeCreator')}</CtaLink>
-            <CtaLink href="/support#contact" variant="outline">{t('common.signUp')}</CtaLink>
+            <CtaLink href="https://mrfox.com" target="_blank" rel="noopener noreferrer">
+              {t('common.becomeCreator')}
+            </CtaLink>
+            <CtaLink href="https://mrfox.com" target="_blank" rel="noopener noreferrer" variant="outline">
+              {t('common.signUp')}
+            </CtaLink>
           </div>
         </div>
       </div>

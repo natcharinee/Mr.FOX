@@ -4,37 +4,12 @@ import { container } from '@/lib/layout'
 
 const footerSections = [
   {
-    titleKey: 'company',
-    links: [
-      { key: 'about', href: '/about' },
-      { key: 'careers', href: '/about#careers' },
-      { key: 'contact', href: '/support#contact' },
-    ],
-  },
-  {
-    titleKey: 'ecosystem',
-    links: [
-      { label: 'FOXY', href: '#' },
-      { label: 'CLIQ', href: '#' },
-      { label: 'CupE', href: '#' },
-      { key: 'allPlatforms', href: '/platforms' },
-    ],
-  },
-  {
-    titleKey: 'resources',
-    links: [
-      { key: 'blog', href: '/blog' },
-      { key: 'creatorGuide', href: '#' },
-      { key: 'faq', href: '/support#faq' },
-    ],
-  },
-  {
     titleKey: 'legal',
     links: [
-      { key: 'privacy', href: '#' },
-      { key: 'terms', href: '#' },
-      { key: 'cookie', href: '#' },
-      { key: 'dmca', href: '#' },
+      { key: 'privacy', href: '/legal/privacy' },
+      { key: 'terms', href: '/legal/terms' },
+      { key: 'cookie', href: '/legal/cookie' },
+      { key: 'dmca', href: '/legal/dmca' },
     ],
   },
 ]
@@ -48,7 +23,7 @@ export default function Footer() {
         <div className="mb-16 grid gap-10 min-[901px]:grid-cols-[1fr_2fr] min-[901px]:gap-16">
           <div>
             <a href="#" className="inline-flex items-center">
-              <Logo className="[&_img]:h-11 [&_svg]:h-9" />
+              <Logo showMark={false} className="[&_svg]:h-9" />
             </a>
             <p className="mt-3 text-sm text-muted-foreground">{t('footer.tagline')}</p>
             <a
@@ -74,7 +49,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 min-[481px]:grid-cols-2 min-[901px]:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 min-[901px]:justify-items-end">
             {footerSections.map((section) => (
               <div key={section.titleKey}>
                 <h4 className="mb-4 text-[13px] font-bold uppercase tracking-wider text-muted-foreground">
@@ -100,10 +75,10 @@ export default function Footer() {
           </p>
           <div className="flex gap-5">
             {[
-              ['https://facebook.com/mrfox', 'Facebook'],
-              ['https://instagram.com/mrfox', 'Instagram'],
+              ['https://www.facebook.com/share/1BisAuaSpv/?mibextid=wwXIfr', 'Facebook'],
+              ['https://www.instagram.com/mr.fox.thailand?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', 'Instagram'],
               ['https://x.com/mrfox', 'X'],
-              ['#', 'LinkedIn'],
+              ['https://www.threads.net/@mr.fox.thailand', 'Threads'],
             ].map(([href, label]) => (
               <a
                 key={label}

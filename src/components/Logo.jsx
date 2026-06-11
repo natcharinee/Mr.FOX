@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 
-export default function Logo({ className = '', variant = 'compact' }) {
+export default function Logo({ className = '', variant = 'compact', showMark = true }) {
   const isBanner = variant === 'banner' || className.includes('brand-banner')
 
   return (
@@ -13,7 +13,7 @@ export default function Logo({ className = '', variant = 'compact' }) {
       role="img"
       aria-label="Mr.FOX"
     >
-      {!isBanner && (
+      {!isBanner && showMark && (
         <img
           src="/images/fox-mark.png"
           alt=""

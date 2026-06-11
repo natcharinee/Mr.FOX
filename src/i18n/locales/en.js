@@ -320,10 +320,16 @@ export default {
     q4: 'How do I get started?',
     a4: 'Click "Become a Creator" and fill out the application. Our team reviews submissions within 48 hours and guides you through onboarding.',
   },
+  legalPage: {
+    updated: 'Last updated: {{date}}',
+    documents: 'Documents',
+    questions: 'Questions about this policy?',
+    contact: 'Contact our team',
+  },
   footer: {
     tagline: 'The Creator Ecosystem Company',
     phone: '02 957 5771',
-    address: '1323/1 Srivara Road (Lat Phrao 94) Town in Town PhlabPhla Wangthonglang',
+    address: '1323/1 Srivara Road (Lat Phrao 94) Town in Town PhlabPhla Wangthonglang Bangkok 10310',
     company: 'Company',
     ecosystem: 'Ecosystem',
     resources: 'Resources',
