@@ -49,11 +49,39 @@ export default {
     monthlyViewsValue: 'Millions',
     distributionValue: 'Multi-Platform',
   },
+  brandBanner: {
+    intro: 'Mr.FOX is a Creator Super App that connects creators and fans through content, communication, community, and commerce.',
+    body: 'From live streaming and direct messaging to premium memberships and token-powered experiences, Mr.FOX provides everything creators need to build, engage, and monetize their audience in one unified ecosystem.',
+    outro: '',
+  },
   ecosystem: {
     label: 'Ecosystem',
     title: '20+ platforms. One creator ecosystem.',
     subtitle: 'Every niche, every audience — Mr.FOX powers platforms built for creators who lead their category.',
     viewAll: 'View all platforms',
+  },
+  featuresPage: {
+    metaTitle: 'Features — Mr.FOX',
+    metaDescription: 'Tools and services for creators — monetize, grow your brand, and scale sustainably.',
+    label: 'Features',
+    title: 'Everything creators need to grow',
+    subtitle: 'From monetization to end-to-end solutions — built to power your success.',
+  },
+  blogPage: {
+    metaTitle: 'Blog — Mr.FOX',
+    metaDescription: 'News, insights, and creator economy trends from the Mr.FOX team.',
+  },
+  supportPage: {
+    metaTitle: 'Support — Mr.FOX',
+    metaDescription: 'FAQs, trust & safety policies, and ways to reach the Mr.FOX team.',
+    label: 'Support',
+    title: 'We are here to help',
+    subtitle: 'Answers, safety policies, and contact options — all in one place.',
+  },
+  aboutPage: {
+    metaTitle: 'About — Mr.FOX',
+    metaDescription: 'Learn about Mr.FOX — our vision, mission, and career opportunities.',
+    subtitle: 'Building a complete creator economy ecosystem — from platforms and technology to creator care.',
   },
   platformsPage: {
     metaTitle: 'Platforms — Mr.FOX',

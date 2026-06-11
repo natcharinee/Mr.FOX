@@ -97,7 +97,7 @@
   }
 
   html[lang="th"] body {
-    font-family: 'Prompt', var(--font-sans);
+    font-family: 'Sarabun', 'Prompt', var(--font-sans);
   }
 
   html[lang="zh-Hans"] body {

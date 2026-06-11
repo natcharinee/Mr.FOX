@@ -7,14 +7,18 @@ export default function MetaUpdater() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    const isPlatformsPage = pathname === '/platforms'
-    document.title = isPlatformsPage ? t('platformsPage.metaTitle') : t('meta.title')
+    const metaByPath = {
+      '/platforms': ['platformsPage.metaTitle', 'platformsPage.metaDescription'],
+      '/features': ['featuresPage.metaTitle', 'featuresPage.metaDescription'],
+      '/blog': ['blogPage.metaTitle', 'blogPage.metaDescription'],
+      '/support': ['supportPage.metaTitle', 'supportPage.metaDescription'],
+      '/about': ['aboutPage.metaTitle', 'aboutPage.metaDescription'],
+    }
+    const [titleKey, descriptionKey] = metaByPath[pathname] ?? ['meta.title', 'meta.description']
+    document.title = t(titleKey)
     const meta = document.querySelector('meta[name="description"]')
     if (meta) {
-      meta.setAttribute(
-        'content',
-        isPlatformsPage ? t('platformsPage.metaDescription') : t('meta.description'),
-      )
+      meta.setAttribute('content', t(descriptionKey))
     }
   }, [locale, t, pathname])
 

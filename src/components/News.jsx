@@ -1,21 +1,25 @@
 import { articleKeys, articleCategories } from '../data/content'
 import { useI18n } from '../i18n/I18nContext'
-import { container, section, sectionLabel, sectionTitle, sectionSubtitle, card } from '@/lib/layout'
+import { container, section, leadSection, sectionLabel, sectionTitle, sectionSubtitle, card } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
 const articleDates = ['Mar 2026', 'Feb 2026', 'Jan 2026', 'Jan 2026']
 
-export default function News() {
+export default function News({ lead = false }) {
   const { t } = useI18n()
 
   return (
-    <section className={section} id="news">
+    <section className={lead ? leadSection : section} id="news">
       <div className={container}>
-        <p className={sectionLabel}>{t('news.label')}</p>
-        <h2 className={sectionTitle}>{t('news.title')}</h2>
-        <p className={sectionSubtitle}>{t('news.subtitle')}</p>
+        {!lead && (
+          <>
+            <p className={sectionLabel}>{t('news.label')}</p>
+            <h2 className={sectionTitle}>{t('news.title')}</h2>
+            <p className={sectionSubtitle}>{t('news.subtitle')}</p>
+          </>
+        )}
 
-        <div className="my-8 flex flex-wrap gap-2">
+        <div className={cn('flex flex-wrap gap-2', lead ? 'mb-8' : 'my-8')}>
           {articleCategories.map((key) => (
             <span
               key={key}

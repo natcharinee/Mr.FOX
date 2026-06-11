@@ -1,18 +1,23 @@
 import { timeline } from '../data/content'
 import { useI18n } from '../i18n/I18nContext'
-import { container, section, sectionLabel, sectionTitle, card } from '@/lib/layout'
+import Careers from './Careers'
+import { container, section, leadSection, sectionLabel, sectionTitle, card } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
-export default function About() {
+export default function About({ lead = false }) {
   const { t } = useI18n()
 
   return (
-    <section className={section} id="about">
+    <section className={lead ? leadSection : section} id="about">
       <div className={cn(container, 'mb-16 grid gap-16 min-[901px]:grid-cols-[1.2fr_1fr]')}>
         <div>
-          <p className={sectionLabel}>{t('about.label')}</p>
-          <h2 className={sectionTitle}>{t('about.title')}</h2>
-          <div className="mt-8 flex flex-col gap-6">
+          {!lead && (
+            <>
+              <p className={sectionLabel}>{t('about.label')}</p>
+              <h2 className={sectionTitle}>{t('about.title')}</h2>
+            </>
+          )}
+          <div className={cn('flex flex-col gap-6', !lead && 'mt-8')}>
             {['vision', 'mission'].map((key) => (
               <div key={key} className={cn(card, 'p-7')}>
                 <h3 className="mb-2 text-base font-bold text-primary">
@@ -55,6 +60,8 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      <Careers embedded />
     </section>
   )
 }

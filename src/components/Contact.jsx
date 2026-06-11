@@ -35,8 +35,8 @@ export default function Contact() {
           <p className={sectionLabel}>{t('contact.label')}</p>
           <h2 className={sectionTitle}>{t('contact.title')}</h2>
           <div className="mt-8 flex flex-wrap gap-3">
-            <CtaLink href="#contact">{t('common.becomeCreator')}</CtaLink>
-            <CtaLink href="#ecosystem" variant="outline">{t('common.signUpAsFan')}</CtaLink>
+            <CtaLink href="/support#contact">{t('common.becomeCreator')}</CtaLink>
+            <CtaLink href="/platforms" variant="outline">{t('common.signUpAsFan')}</CtaLink>
           </div>
         </div>
 

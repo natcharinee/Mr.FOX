@@ -6,17 +6,17 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { container, section, sectionTitle } from '@/lib/layout'
+import { container, section, leadSection, sectionTitle } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
-export default function FAQ() {
+export default function FAQ({ lead = false }) {
   const { t } = useI18n()
 
   return (
-    <section className={section} id="faq">
+    <section className={lead ? leadSection : section} id="faq">
       <div className={cn(container, 'max-w-[800px]')}>
-        <h2 className={sectionTitle}>{t('faq.title')}</h2>
-        <Accordion type="single" collapsible className="mt-10 gap-2">
+        {!lead && <h2 className={sectionTitle}>{t('faq.title')}</h2>}
+        <Accordion type="single" collapsible className={cn('gap-2', lead ? '' : 'mt-10')}>
           {faqKeys.map((key) => (
             <AccordionItem
               key={key}

@@ -2,6 +2,8 @@ export const container = 'mx-auto w-full max-w-[1200px] px-6'
 
 export const section = 'border-t border-border py-[clamp(80px,10vw,140px)]'
 
+export const leadSection = 'py-[clamp(80px,10vw,140px)]'
+
 export const sectionLabel =
   'mb-4 text-[13px] font-semibold uppercase tracking-[0.12em] text-muted-foreground'
 

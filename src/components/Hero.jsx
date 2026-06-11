@@ -26,10 +26,10 @@ export default function Hero() {
             {t('hero.title')}
           </h1>
           <div className="flex shrink-0 flex-wrap justify-end gap-3 max-[900px]:w-full max-[900px]:justify-start max-[480px]:w-full max-[480px]:flex-col">
-            <CtaLink href="#contact" className="max-[480px]:w-full max-[480px]:justify-center">
+            <CtaLink href="/support#contact" className="max-[480px]:w-full max-[480px]:justify-center">
               {t('common.becomeCreator')}
             </CtaLink>
-            <CtaLink href="#ecosystem" variant="outline" className="max-[480px]:w-full max-[480px]:justify-center">
+            <CtaLink href="/#ecosystem" variant="outline" className="max-[480px]:w-full max-[480px]:justify-center">
               {t('common.exploreEcosystem')}
             </CtaLink>
           </div>

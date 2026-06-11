@@ -4,11 +4,10 @@ import { CtaLink } from './CtaButton'
 import { container, section, sectionLabel, sectionTitle, sectionSubtitle, card } from '@/lib/layout'
 import { cn } from '@/lib/utils'
 
-export default function Careers() {
+export default function Careers({ embedded = false }) {
   const { t } = useI18n()
 
-  return (
-    <section className={section} id="careers">
+  const content = (
       <div className={cn(container, 'grid items-start gap-16 min-[769px]:grid-cols-2')}>
         <div>
           <p className={sectionLabel}>{t('careers.label')}</p>
@@ -25,11 +24,20 @@ export default function Careers() {
                 <h3 className="text-lg font-bold">{t(`careers.${id}.role`)}</h3>
                 <span className="mt-1 block text-[13px] text-muted-foreground">{t(`careers.${id}.dept`)}</span>
               </div>
-              <CtaLink href="#contact" variant="outline" size="sm">{t('common.apply')}</CtaLink>
+              <CtaLink href="/support#contact" variant="outline" size="sm">{t('common.apply')}</CtaLink>
             </div>
           ))}
         </div>
       </div>
+  )
+
+  if (embedded) {
+    return <div id="careers" className="mt-16 border-t border-border pt-16">{content}</div>
+  }
+
+  return (
+    <section className={section} id="careers">
+      {content}
     </section>
   )
 }

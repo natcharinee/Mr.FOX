@@ -6,9 +6,9 @@ const footerSections = [
   {
     titleKey: 'company',
     links: [
-      { key: 'about', href: '#about' },
-      { key: 'careers', href: '#careers' },
-      { key: 'contact', href: '#contact' },
+      { key: 'about', href: '/about' },
+      { key: 'careers', href: '/about#careers' },
+      { key: 'contact', href: '/support#contact' },
     ],
   },
   {
@@ -23,9 +23,9 @@ const footerSections = [
   {
     titleKey: 'resources',
     links: [
-      { key: 'blog', href: '#news' },
+      { key: 'blog', href: '/blog' },
       { key: 'creatorGuide', href: '#' },
-      { key: 'faq', href: '#faq' },
+      { key: 'faq', href: '/support#faq' },
     ],
   },
   {

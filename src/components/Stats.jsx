@@ -28,8 +28,8 @@ export default function Stats() {
           ))}
         </div>
         <div className="flex flex-wrap gap-3">
-          <CtaLink href="#contact">{t('common.becomeCreator')}</CtaLink>
-          <CtaLink href="#ecosystem" variant="outline">{t('common.exploreEcosystem')}</CtaLink>
+          <CtaLink href="/support#contact">{t('common.becomeCreator')}</CtaLink>
+          <CtaLink href="/platforms" variant="outline">{t('common.exploreEcosystem')}</CtaLink>
         </div>
       </div>
     </section>

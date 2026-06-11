@@ -2,13 +2,13 @@ import { creatorBenefitIds } from '../data/content'
 import { useI18n } from '../i18n/I18nContext'
 import { CtaLink } from './CtaButton'
 import { cn } from '@/lib/utils'
-import { container, section, sectionLabel, sectionTitle, sectionSubtitle, card } from '@/lib/layout'
+import { container, section, leadSection, sectionLabel, sectionTitle, sectionSubtitle, card } from '@/lib/layout'
 
-export default function ForCreators() {
+export default function ForCreators({ lead = false }) {
   const { t } = useI18n()
 
   return (
-    <section className={section} id="creators">
+    <section className={lead ? leadSection : section} id="creators">
       <div className={cn(
         container,
         'grid items-start gap-16 min-[901px]:grid-cols-[1fr_1.4fr]',
@@ -17,7 +17,7 @@ export default function ForCreators() {
           <p className={sectionLabel}>{t('creators.label')}</p>
           <h2 className={sectionTitle}>{t('creators.title')}</h2>
           <p className={sectionSubtitle}>{t('creators.subtitle')}</p>
-          <CtaLink href="#contact" className="mt-8">{t('common.becomeCreator')}</CtaLink>
+          <CtaLink href="/support#contact" className="mt-8">{t('common.becomeCreator')}</CtaLink>
         </div>
         <div className="grid grid-cols-1 gap-4 min-[901px]:grid-cols-2">
           {creatorBenefitIds.map((id, i) => (

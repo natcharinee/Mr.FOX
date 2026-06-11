@@ -21,7 +21,7 @@ export default function Partners() {
             >
               <h3 className="mb-2 text-lg font-bold">{t(`partners.${id}.type`)}</h3>
               <p className="mb-5 text-sm text-muted-foreground">{t(`partners.${id}.desc`)}</p>
-              <a href="#contact" className={goldLink}>{t('common.partnerWithUs')}</a>
+              <a href="/support#contact" className={goldLink}>{t('common.partnerWithUs')}</a>
             </div>
           ))}
         </div>

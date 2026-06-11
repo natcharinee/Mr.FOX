@@ -49,11 +49,39 @@ export default {
     monthlyViewsValue: '数百万',
     distributionValue: '多平台',
   },
+  brandBanner: {
+    intro: 'Mr.FOX 是引领未来创作者经济的平台',
+    body: '我们打造一片天地，让创作者尽情创作内容、连接粉丝、构建社群、无限变现——通过互联互通的平台网络与服务，汇聚于同一生态系统。',
+    outro: '不止是一款应用，Mr.FOX 更是助力创作者成长、塑造品牌、将热爱转化为可持续事业的基础设施。',
+  },
   ecosystem: {
     label: '生态系统',
     title: '20+ 平台，一个创作者生态系统',
     subtitle: '每个细分领域，每个受众 — Mr.FOX 为引领行业的创作者打造平台',
     viewAll: '查看全部平台',
+  },
+  featuresPage: {
+    metaTitle: '功能 — Mr.FOX',
+    metaDescription: '为创作者提供的工具与服务 — 变现、品牌建设与可持续增长。',
+    label: '功能',
+    title: '创作者成长所需的一切',
+    subtitle: '从变现到端到端解决方案 — 助力您的成功。',
+  },
+  blogPage: {
+    metaTitle: '博客 — Mr.FOX',
+    metaDescription: 'Mr.FOX 团队带来的新闻、洞察与创作者经济趋势。',
+  },
+  supportPage: {
+    metaTitle: '支持 — Mr.FOX',
+    metaDescription: '常见问题、信任与安全政策，以及联系 Mr.FOX 团队的方式。',
+    label: '支持',
+    title: '我们随时为您提供帮助',
+    subtitle: '解答、安全政策与联系方式 — 一应俱全。',
+  },
+  aboutPage: {
+    metaTitle: '关于我们 — Mr.FOX',
+    metaDescription: '了解 Mr.FOX — 愿景、使命与职业机会。',
+    subtitle: '构建完整的创作者经济生态系统 — 从平台与技术到创作者关怀。',
   },
   platformsPage: {
     metaTitle: '平台 — Mr.FOX',

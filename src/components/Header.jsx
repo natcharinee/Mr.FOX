@@ -8,26 +8,15 @@ import { container } from '@/lib/layout'
 import { useI18n } from '../i18n/I18nContext'
 
 const desktopLinkKeys = [
-  { href: '/#home', key: 'home' },
-  { href: '/#solutions', key: 'features' },
+  { href: '/', key: 'home' },
   { href: '/platforms', key: 'platform' },
-  { href: '/#faq', key: 'support' },
-  { href: '/#news', key: 'blog' },
-  { href: '/#about', key: 'about' },
-  { href: '/#careers', key: 'careers' },
+  { href: '/features', key: 'features' },
+  { href: '/blog', key: 'blog' },
+  { href: '/support', key: 'support' },
+  { href: '/about', key: 'about' },
 ]
 
-const mobileLinkKeys = [
-  { href: '/#home', key: 'home' },
-  { href: '/platforms', key: 'platform' },
-  { href: '/#creators', key: 'forCreators' },
-  { href: '/#solutions', key: 'solutions' },
-  { href: '/#stories', key: 'successStories' },
-  { href: '/#about', key: 'about' },
-  { href: '/#news', key: 'news' },
-  { href: '/#careers', key: 'careers' },
-  { href: '/#contact', key: 'contact' },
-]
+const mobileLinkKeys = desktopLinkKeys
 
 export default function Header({ overHero = false }) {
   const { t } = useI18n()
@@ -75,10 +64,10 @@ export default function Header({ overHero = false }) {
 
           <div className="ml-auto flex shrink-0 items-center min-[901px]:ml-0">
             <div className="hidden items-center gap-6 border-l border-white/10 pl-8 min-[901px]:flex">
-              <CtaLink href="#contact" size="sm">
+              <CtaLink href="/support#contact" size="sm">
                 {t('common.signUp')}
               </CtaLink>
-              <CtaLink href="#contact" variant="outline" size="sm">
+              <CtaLink href="/support#contact" variant="outline" size="sm">
                 {t('common.login')}
               </CtaLink>
               <LanguageSwitcher />
@@ -119,12 +108,12 @@ export default function Header({ overHero = false }) {
             <LanguageSwitcher inOverlay />
           </div>
         </div>
-        <nav className="flex flex-1 flex-col justify-center gap-2 px-6">
+        <nav className="flex flex-1 flex-col justify-start gap-0 px-8 pt-10">
           {mobileLinkKeys.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="py-3 text-[clamp(28px,5vw,42px)] font-bold tracking-tight transition-colors hover:text-primary"
+              className="border-b border-white/5 py-3 text-[clamp(24px,4vw,32px)] font-semibold leading-tight tracking-tight transition-colors last:border-b-0 hover:text-primary"
               onClick={() => setMenuOpen(false)}
             >
               {t(`nav.${link.key}`)}
@@ -132,10 +121,10 @@ export default function Header({ overHero = false }) {
           ))}
         </nav>
         <div className="flex flex-wrap gap-3 p-6">
-          <CtaLink href="#contact" onClick={() => setMenuOpen(false)}>
+          <CtaLink href="/support#contact" onClick={() => setMenuOpen(false)}>
             {t('common.becomeCreator')}
           </CtaLink>
-          <CtaLink href="#ecosystem" variant="outline" onClick={() => setMenuOpen(false)}>
+          <CtaLink href="/platforms" variant="outline" onClick={() => setMenuOpen(false)}>
             {t('common.exploreEcosystem')}
           </CtaLink>
         </div>

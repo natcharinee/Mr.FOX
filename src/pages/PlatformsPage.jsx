@@ -97,8 +97,8 @@ export default function PlatformsPage() {
               {t('platformsPage.ctaSubtitle')}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <CtaLink href="/#contact">{t('common.becomeCreator')}</CtaLink>
-              <CtaLink href="/#home" variant="outline">{t('platformsPage.backHome')}</CtaLink>
+              <CtaLink href="/support#contact">{t('common.becomeCreator')}</CtaLink>
+              <CtaLink href="/" variant="outline">{t('platformsPage.backHome')}</CtaLink>
             </div>
           </div>
         </section>
