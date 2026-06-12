@@ -132,7 +132,7 @@ function PhoneScreenAnimation() {
         </div>
       </div>
 
-      <div className="relative mt-auto space-y-1.5 px-3.5 pb-7 pt-3">
+      <div className="relative mt-auto space-y-1.5 px-3.5 pb-5 pt-2 sm:pb-7 sm:pt-3">
         {chatMessages.map((msg) => (
           <div
             key={msg.textKey}
@@ -177,7 +177,7 @@ export default function PhoneMockup({ className }) {
   return (
     <div
       className={cn(
-        'relative h-[clamp(360px,52vw,560px)] w-[clamp(178px,26vw,278px)]',
+        'relative mx-auto aspect-[278/560] w-[min(72vw,48vmin,240px)] sm:w-[min(42vw,278px)] md:w-[min(26vw,278px)]',
         className,
       )}
     >

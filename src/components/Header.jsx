@@ -63,28 +63,8 @@ export default function Header({ overHero = false }) {
           </nav>
 
           <div className="ml-auto flex shrink-0 items-center min-[901px]:ml-0">
-            <div className="hidden items-center gap-1.5 border-l border-white/10 pl-5 min-[901px]:flex">
-              <CtaLink
-                href="https://www.mrfox.com/Login/Index"
-                target="_blank"
-                rel="noopener noreferrer"
-                size="sm"
-                className="h-9 px-4 text-[13px]"
-              >
-                {t('common.signUp')}
-              </CtaLink>
-              <CtaLink
-                href="https://www.mrfox.com/Login/Index"
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="outline"
-                size="sm"
-                className="h-9 border-white/15 bg-white/[0.05] px-4 text-[13px] hover:border-white/25 hover:bg-white/10"
-              >
-                {t('common.login')}
-              </CtaLink>
-              <span className="mx-0.5 h-5 w-px shrink-0 bg-white/10" aria-hidden="true" />
-              <LanguageSwitcher className="h-9 px-2" />
+            <div className="hidden items-center border-l border-white/10 pl-5 min-[901px]:flex">
+              <LanguageSwitcher className="h-9" />
             </div>
             <Button
               variant="outline"

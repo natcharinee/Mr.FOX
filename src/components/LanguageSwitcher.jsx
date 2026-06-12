@@ -11,13 +11,21 @@ import { cn } from '@/lib/utils'
 import FlagIcon from './FlagIcon'
 
 const languages = [
-  { code: 'th', label: 'ไทย' },
+  { code: 'th', label: 'ภาษาไทย' },
   { code: 'en', label: 'English' },
   { code: 'zh', label: '中文' },
 ]
 
 const flagClass =
-  'h-4 w-6 shrink-0 overflow-hidden rounded-[3px] ring-1 ring-black/25 [&_svg]:block [&_svg]:h-full [&_svg]:w-full'
+  'h-[17px] w-[25px] overflow-hidden rounded-[4px] ring-1 ring-white/12 shadow-[0_1px_2px_rgba(0,0,0,0.35)] [&_svg]:block [&_svg]:h-full [&_svg]:w-full [&_svg]:object-cover'
+
+function FlagSlot({ code }) {
+  return (
+    <span className="flex w-7 shrink-0 items-center justify-center">
+      <FlagIcon code={code} className={flagClass} />
+    </span>
+  )
+}
 
 export default function LanguageSwitcher({ className = '', inOverlay = false }) {
   const { locale, setLocale } = useI18n()
@@ -30,20 +38,21 @@ export default function LanguageSwitcher({ className = '', inOverlay = false }) 
           variant="outline"
           size="sm"
           className={cn(
-            'group h-9 gap-1.5 rounded-full border-white/15 bg-white/[0.05] px-2.5 text-foreground hover:border-white/25 hover:bg-white/10 data-[state=open]:border-primary/40 data-[state=open]:bg-white/10',
+            'group h-9 items-center gap-2 rounded-full border-white/15 bg-white/[0.05] py-0 pl-3 pr-2.5 text-foreground hover:border-white/25 hover:bg-white/10 data-[state=open]:border-primary/40 data-[state=open]:bg-white/10',
             className,
           )}
           aria-label={`Language: ${current.label}`}
         >
-          <FlagIcon code={current.code} className={flagClass} />
-          <ChevronDown className="size-3 text-muted-foreground/80 transition-transform group-data-[state=open]:rotate-180" />
+          <FlagSlot code={current.code} />
+          <span className="text-[13px] font-semibold leading-none tracking-tight">{current.label}</span>
+          <ChevronDown className="ml-0.5 size-3 shrink-0 text-muted-foreground/80 transition-transform group-data-[state=open]:rotate-180" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
         sideOffset={8}
         className={cn(
-          'z-[110] w-auto min-w-0 border border-white/10 bg-[#141414] p-1.5 shadow-xl',
+          'z-[110] min-w-[10.5rem] border border-white/10 bg-[#141414] p-1.5 shadow-xl',
           inOverlay && 'z-[250]',
         )}
       >
@@ -55,13 +64,14 @@ export default function LanguageSwitcher({ className = '', inOverlay = false }) 
               onClick={() => setLocale(code)}
               aria-label={label}
               className={cn(
-                'flex cursor-pointer items-center justify-center rounded-lg p-2.5 outline-none',
+                'flex cursor-pointer items-center gap-2.5 rounded-lg px-3 py-2.5 outline-none',
                 isActive
                   ? 'bg-primary/10 ring-1 ring-primary/30 focus:bg-primary/14'
                   : 'focus:bg-white/[0.06]',
               )}
             >
-              <FlagIcon code={code} className={flagClass} />
+              <FlagSlot code={code} />
+              <span className="text-[13px] font-semibold leading-none tracking-tight">{label}</span>
             </DropdownMenuItem>
           )
         })}

@@ -68,7 +68,7 @@ export default {
     pill3: 'One Account. Every Experience.',
     phoneHub: 'Creator Hub',
     phoneStatPlatforms: 'แพลตฟอร์ม',
-    phoneStatCreators: 'ครีเอเตอร์',
+    phoneStatCreators: 'ยอดผู้ติดตาม',
     phonePlatforms: 'เครือข่ายแพลตฟอร์ม',
     phoneEarnings: 'รายได้วันนี้',
     phoneEarningsTotal: 'รวมทั้งหมด',

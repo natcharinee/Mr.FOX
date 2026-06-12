@@ -91,10 +91,10 @@ export default function BrandStory() {
             </div>
           </div>
 
-        <div className="relative mt-10 overflow-hidden rounded-[28px] border border-primary/20 px-6 py-12 shadow-[0_0_100px_rgba(242,202,80,0.1)] sm:px-10 sm:py-14">
+        <div className="relative mt-8 overflow-hidden rounded-[20px] border border-primary/20 px-3 py-8 shadow-[0_0_100px_rgba(242,202,80,0.1)] sm:mt-10 sm:rounded-[28px] sm:px-6 sm:py-12 md:px-10 md:py-14">
           <PaperShaderBackground />
           <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
-          <div className="relative z-10 flex justify-center">
+          <div className="relative z-10 flex justify-center overflow-visible px-1 sm:px-2">
             <PhoneMockup />
           </div>
         </div>

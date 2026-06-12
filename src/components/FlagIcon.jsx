@@ -38,7 +38,7 @@ const flags = {
 
 export default function FlagIcon({ code, className = '' }) {
   return (
-    <span className={cn('inline-flex', className)}>
+    <span className={cn('inline-flex items-center justify-center', className)}>
       {flags[code] ?? flags.en}
     </span>
   )
